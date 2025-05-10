@@ -1,0 +1,444 @@
+/* Global Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header-height {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+}
+
+.school-info-container {
+    position: relative;
+    z-index: 3;
+}
+
+.school-info-background {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.school-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.reg-number {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.school-motto {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.logo-img {
+    max-width: 120px;
+}
+
+/* Mobile Header */
+.mobile-school-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #0d6efd;
+}
+
+.mobile-school-motto {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.mobile-logo {
+    max-width: 60px;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-nav .nav-link {
+    padding: 1rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.footer-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #0d6efd;
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #0d6efd;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    background-color: #e9ecef;
+    padding: 1rem 0;
+}
+
+.developer-link {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.developer-link:hover {
+    text-decoration: underline;
+}
+
+/* Map Styles */
+.map-container {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.map-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.map-toggle-btn {
+    background: none;
+    border: none;
+    color: #0d6efd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+}
+
+.map-toggle-btn:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.map-wrapper {
+    max-height: 200px;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.map-wrapper.expanded {
+    max-height: 400px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_iframe {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+/* Carousel Styles */
+.carousel-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Home Page Styles */
+.welcome-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+/* News & Events Styles */
+.badge {
+    padding: 0.5rem 0.8rem;
+    font-weight: 500;
+}
+
+/* About Page Styles */
+.about-image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mission-vision-card {
+    height: 100%;
+    border-left: 5px solid #0d6efd;
+}
+
+/* Contact Page Styles */
+.contact-info-card {
+    height: 100%;
+    border-left: 5px solid #0d6efd;
+}
+
+.contact-form .form-control {
+    padding: 0.8rem;
+    border-radius: 0;
+}
+
+/* Admissions Page Styles */
+.admission-steps .step {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+
+.admission-steps .step:before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Results Page Styles */
+.results-table th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Downloads Page Styles */
+.download-card {
+    border-left: 5px solid #0d6efd;
+}
+
+.download-icon {
+    font-size: 2rem;
+    color: #0d6efd;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        justify-content: space-around;
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .school-title {
+        font-size: 1.8rem;
+    }
+
+    .school-motto {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        max-width: 80px;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .map-wrapper {
+        max-height: 150px;
+    }
+
+    .map-wrapper.expanded {
+        max-height: 300px;
+    }
+
+    .mapouter, .gmap_canvas {
+        height: 300px;
+    }
+
+    .gmap_iframe {
+        height: 300px !important;
+    }
+
+    .map-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .map-toggle-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem;
+        border: 1px solid #dee2e6;
+    }
+}
