@@ -90,6 +90,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // School Leadership Management
     Route::resource('leaders', App\Http\Controllers\Admin\LeaderController::class);
     Route::post('leaders/update-order', [App\Http\Controllers\Admin\LeaderController::class, 'updateOrder'])->name('leaders.update-order');
+
+    // Welcome Message Management
+    Route::resource('welcome-messages', App\Http\Controllers\Admin\WelcomeMessageController::class);
+    Route::post('welcome-messages/{id}/set-active', [App\Http\Controllers\Admin\WelcomeMessageController::class, 'setActive'])->name('welcome-messages.set-active');
 });
 
 // Authentication Routes

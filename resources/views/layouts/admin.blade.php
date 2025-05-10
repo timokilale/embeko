@@ -75,15 +75,19 @@
 
                     // Also handle any specific editor instances we've stored
                     const editorInstances = [
-                        'editor', 'descriptionEditor', 'resultsDataEditor'
+                        'editor', 'descriptionEditor', 'resultsDataEditor', 'welcomeEditor', 'contentEditor', 'editContentEditor'
                     ];
 
                     editorInstances.forEach(instanceName => {
                         if (window[instanceName]) {
-                            const targetId = window[instanceName].sourceElement.getAttribute('id');
-                            const targetElement = document.getElementById(targetId);
-                            if (targetElement) {
-                                targetElement.value = window[instanceName].getData();
+                            try {
+                                const targetId = window[instanceName].sourceElement.getAttribute('id');
+                                const targetElement = document.getElementById(targetId);
+                                if (targetElement) {
+                                    targetElement.value = window[instanceName].getData();
+                                }
+                            } catch (error) {
+                                console.warn('Error handling editor instance:', error);
                             }
                         }
                     });

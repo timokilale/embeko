@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\SchoolInfo;
+use App\Models\WelcomeMessage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,10 @@ class HomeController extends Controller
 
         $schoolInfo = SchoolInfo::getInfo();
 
-        return view('home', compact('latestPosts', 'upcomingEvents', 'schoolInfo'));
+        // Get the active welcome message
+        $welcomeMessage = WelcomeMessage::getActive();
+
+        return view('home', compact('latestPosts', 'upcomingEvents', 'schoolInfo', 'welcomeMessage'));
     }
 
     /**

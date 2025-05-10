@@ -134,15 +134,13 @@
                 <div class="card-body">
                     @if($page->layout == 'about')
                         <div class="alert alert-info mb-4">
-                            <h5><i class="fas fa-lightbulb me-2"></i>Adding School Leadership Profiles</h5>
-                            <p>To add leadership profiles with photos:</p>
-                            <ol>
-                                <li>Create a new section titled "School Leadership" or edit the existing one</li>
-                                <li>In the content editor, click the "Upload Image" button <i class="fas fa-image"></i> to add profile photos</li>
-                                <li>Arrange the profiles in a grid layout using the formatting options</li>
-                                <li>For each profile, add the person's name, title, and description</li>
-                            </ol>
-                            <p class="mb-0"><strong>Tip:</strong> For best results, use square images (e.g., 300x300 pixels) for profile photos.</p>
+                            <h5><i class="fas fa-lightbulb me-2"></i>School Leadership Management</h5>
+                            <p>The School Leadership section is now managed separately through the dedicated <strong>School Leadership</strong> menu in the sidebar.</p>
+                            <p class="mb-0">
+                                <a href="{{ route('admin.leaders.index') }}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user-tie me-2"></i>Manage School Leadership
+                                </a>
+                            </p>
                         </div>
                     @endif
 
@@ -223,25 +221,7 @@
                         <small class="form-text text-muted">Use the toolbar above to format your content, add links, lists, tables, etc.</small>
                     </div>
 
-                    <div class="mb-3">
-                        <div class="accordion" id="templateAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="leadershipTemplateHeading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#leadershipTemplateCollapse" aria-expanded="false" aria-controls="leadershipTemplateCollapse">
-                                        <i class="fas fa-user-tie me-2"></i> Insert Leadership Profile Template
-                                    </button>
-                                </h2>
-                                <div id="leadershipTemplateCollapse" class="accordion-collapse collapse" aria-labelledby="leadershipTemplateHeading" data-bs-parent="#templateAccordion">
-                                    <div class="accordion-body">
-                                        <p>Click the button below to insert a template for leadership profiles:</p>
-                                        <button type="button" class="btn btn-outline-primary" id="insertLeadershipTemplate">
-                                            <i class="fas fa-plus-circle me-2"></i>Insert Template
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -278,26 +258,7 @@
                         <small class="form-text text-muted">Use the toolbar above to format your content, add links, lists, tables, etc.</small>
                     </div>
 
-                    <div class="mb-3">
-                        <div class="accordion" id="editTemplateAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="editLeadershipTemplateHeading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#editLeadershipTemplateCollapse" aria-expanded="false" aria-controls="editLeadershipTemplateCollapse">
-                                        <i class="fas fa-user-tie me-2"></i> Insert Leadership Profile Template
-                                    </button>
-                                </h2>
-                                <div id="editLeadershipTemplateCollapse" class="accordion-collapse collapse" aria-labelledby="editLeadershipTemplateHeading" data-bs-parent="#editTemplateAccordion">
-                                    <div class="accordion-body">
-                                        <p>Click the button below to insert a template for leadership profiles:</p>
-                                        <button type="button" class="btn btn-outline-primary" id="editInsertLeadershipTemplate">
-                                            <i class="fas fa-plus-circle me-2"></i>Insert Template
-                                        </button>
-                                        <p class="text-danger mt-2"><small><strong>Warning:</strong> This will replace any existing content in the editor.</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

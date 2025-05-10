@@ -182,7 +182,7 @@
 
     <!-- Other Sections -->
     @foreach($page->sections as $section)
-        @if(!in_array($section->identifier, ['introduction', 'mission', 'vision', 'values', 'history', 'leadership', 'achievements']))
+        @if(!in_array($section->identifier, ['introduction', 'mission', 'vision', 'values', 'history', 'achievements']))
             <div class="mb-5" id="{{ $section->identifier }}">
                 @if($section->title)
                     <h2 class="mb-4">{{ $section->title }}</h2>
