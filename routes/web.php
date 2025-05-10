@@ -83,6 +83,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::put('pages/{page}/sections/{section}', [AdminPageController::class, 'updateSection'])->name('pages.sections.update');
     Route::delete('pages/{page}/sections/{section}', [AdminPageController::class, 'deleteSection'])->name('pages.sections.delete');
     Route::post('pages/{page}/sections/reorder', [AdminPageController::class, 'reorderSections'])->name('pages.sections.reorder');
+
+    // Image Upload for CKEditor
+    Route::post('upload-image', [App\Http\Controllers\Admin\ImageUploadController::class, 'upload'])->name('image.upload');
+
+    // School Leadership Management
+    Route::resource('leaders', App\Http\Controllers\Admin\LeaderController::class);
+    Route::post('leaders/update-order', [App\Http\Controllers\Admin\LeaderController::class, 'updateOrder'])->name('leaders.update-order');
 });
 
 // Authentication Routes

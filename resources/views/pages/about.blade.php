@@ -17,19 +17,19 @@
             @endif
         </div>
     </div>
-    
+
     <!-- Introduction Section -->
     @php
         $introSection = $page->sections->where('identifier', 'introduction')->first();
     @endphp
-    
+
     @if($introSection)
         <div class="row mb-5">
             <div class="col-12">
                 @if($introSection->title && $introSection->title != 'Introduction')
                     <h2 class="mb-4">{{ $introSection->title }}</h2>
                 @endif
-                
+
                 @if($introSection->type == 'html')
                     {!! $introSection->content !!}
                 @else
@@ -38,20 +38,20 @@
             </div>
         </div>
     @endif
-    
+
     <!-- Mission and Vision -->
     <div class="row mb-5">
         @php
             $missionSection = $page->sections->where('identifier', 'mission')->first();
             $visionSection = $page->sections->where('identifier', 'vision')->first();
         @endphp
-        
+
         @if($missionSection)
             <div class="col-md-6 mb-4 mb-md-0">
                 @if($missionSection->title)
                     <h2 class="mb-4">{{ $missionSection->title }}</h2>
                 @endif
-                
+
                 @if($missionSection->type == 'html')
                     {!! $missionSection->content !!}
                 @else
@@ -59,13 +59,13 @@
                 @endif
             </div>
         @endif
-        
+
         @if($visionSection)
             <div class="col-md-6">
                 @if($visionSection->title)
                     <h2 class="mb-4">{{ $visionSection->title }}</h2>
                 @endif
-                
+
                 @if($visionSection->type == 'html')
                     {!! $visionSection->content !!}
                 @else
@@ -74,18 +74,18 @@
             </div>
         @endif
     </div>
-    
+
     <!-- Core Values Section -->
     @php
         $valuesSection = $page->sections->where('identifier', 'values')->first();
     @endphp
-    
+
     @if($valuesSection)
         <div class="mb-5">
             @if($valuesSection->title)
                 <h2 class="mb-4">{{ $valuesSection->title }}</h2>
             @endif
-            
+
             @if($valuesSection->type == 'html')
                 {!! $valuesSection->content !!}
             @else
@@ -93,18 +93,18 @@
             @endif
         </div>
     @endif
-    
+
     <!-- History Section -->
     @php
         $historySection = $page->sections->where('identifier', 'history')->first();
     @endphp
-    
+
     @if($historySection)
         <div class="mb-5">
             @if($historySection->title)
                 <h2 class="mb-4">{{ $historySection->title }}</h2>
             @endif
-            
+
             @if($historySection->type == 'html')
                 {!! $historySection->content !!}
             @else
@@ -112,37 +112,66 @@
             @endif
         </div>
     @endif
-    
+
     <!-- Leadership Section -->
     @php
         $leadershipSection = $page->sections->where('identifier', 'leadership')->first();
     @endphp
-    
-    @if($leadershipSection)
-        <div class="mb-5">
-            @if($leadershipSection->title)
-                <h2 class="mb-4">{{ $leadershipSection->title }}</h2>
-            @endif
-            
-            @if($leadershipSection->type == 'html')
-                {!! $leadershipSection->content !!}
-            @else
-                {{ $leadershipSection->content }}
-            @endif
-        </div>
-    @endif
-    
+
+    <div class="mb-5">
+        <h2 class="mb-4">{{ $leadershipSection->title ?? 'School Leadership' }}</h2>
+
+        @if($leadershipSection && ($leadershipSection->type == 'html' || $leadershipSection->type == 'text'))
+            <div class="mb-4">
+                @if($leadershipSection->type == 'html')
+                    {!! $leadershipSection->content !!}
+                @else
+                    {{ $leadershipSection->content }}
+                @endif
+            </div>
+        @endif
+
+        @if(isset($leaders) && $leaders->count() > 0)
+            <div class="row">
+                @foreach($leaders as $leader)
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="text-center pt-3">
+                                @if($leader->image)
+                                    <img src="{{ asset('storage/' . $leader->image) }}" alt="{{ $leader->name }}" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover;">
+                                @else
+                                    <div class="bg-light d-flex align-items-center justify-content-center mx-auto rounded-circle" style="width: 150px; height: 150px;">
+                                        <i class="fas fa-user fa-4x text-secondary"></i>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ $leader->name }}</h5>
+                                <p class="card-subtitle mb-2 text-muted">{{ $leader->position }}</p>
+                                <p class="card-text">{{ $leader->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>No leadership profiles have been added yet.
+            </div>
+        @endif
+    </div>
+
     <!-- Achievements Section -->
     @php
         $achievementsSection = $page->sections->where('identifier', 'achievements')->first();
     @endphp
-    
+
     @if($achievementsSection)
         <div class="mb-5">
             @if($achievementsSection->title)
                 <h2 class="mb-4">{{ $achievementsSection->title }}</h2>
             @endif
-            
+
             @if($achievementsSection->type == 'html')
                 {!! $achievementsSection->content !!}
             @else
@@ -150,7 +179,7 @@
             @endif
         </div>
     @endif
-    
+
     <!-- Other Sections -->
     @foreach($page->sections as $section)
         @if(!in_array($section->identifier, ['introduction', 'mission', 'vision', 'values', 'history', 'leadership', 'achievements']))
@@ -158,7 +187,7 @@
                 @if($section->title)
                     <h2 class="mb-4">{{ $section->title }}</h2>
                 @endif
-                
+
                 @if($section->type == 'html')
                     {!! $section->content !!}
                 @elseif($section->type == 'text')

@@ -25,6 +25,9 @@
         <a href="{{ route('admin.school-info.edit') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.school-info.*') ? 'fw-bold text-decoration-underline' : '' }}">
             <i class="fas fa-school me-2"></i> School Info
         </a>
+        <a href="{{ route('admin.leaders.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.leaders.*') ? 'fw-bold text-decoration-underline' : '' }}">
+            <i class="fas fa-user-tie me-2"></i> School Leadership
+        </a>
         <a href="{{ route('admin.pages.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.pages.*') ? 'fw-bold text-decoration-underline' : '' }}">
             <i class="fas fa-file-alt me-2"></i> Website Pages
         </a>
