@@ -1,4 +1,4 @@
-<footer class="footer mt-5">
+<footer class="footer mt-5 border-top">
     <div class="container py-4">
         <div class="row g-4">
             <!-- Map Section -->
@@ -53,9 +53,9 @@
                         <div class="col-md-6">
                             <ul class="footer-links">
                                 <li><a href="{{ route('home') }}"><i class="fas fa-angle-right me-2"></i>Home</a></li>
-                                <li><a href="{{ route('about') }}"><i class="fas fa-angle-right me-2"></i>About Us</a></li>
-                                <li><a href="{{ route('apply') }}"><i class="fas fa-angle-right me-2"></i>How to Apply</a></li>
-                                <li><a href="{{ route('fees') }}"><i class="fas fa-angle-right me-2"></i>Fees Structure</a></li>
+                                <li><a href="{{ route('page.show', 'about-us') }}"><i class="fas fa-angle-right me-2"></i>About Us</a></li>
+                                <li><a href="{{ route('page.show', 'admissions') }}"><i class="fas fa-angle-right me-2"></i>How to Apply</a></li>
+                                <li><a href="{{ route('page.show', 'fees') }}"><i class="fas fa-angle-right me-2"></i>Fees Structure</a></li>
                                 <li><a href="{{ route('results.index') }}"><i class="fas fa-angle-right me-2"></i>Results</a></li>
                             </ul>
                         </div>
@@ -64,8 +64,9 @@
                                 <li><a href="{{ route('posts.index') }}"><i class="fas fa-angle-right me-2"></i>News</a></li>
                                 <li><a href="{{ route('events.index') }}"><i class="fas fa-angle-right me-2"></i>Events</a></li>
                                 <li><a href="{{ route('downloads.index') }}"><i class="fas fa-angle-right me-2"></i>Downloads</a></li>
-                                <li><a href="{{ route('contact') }}"><i class="fas fa-angle-right me-2"></i>Contact Us</a></li>
+                                <li><a href="{{ route('page.show', 'contact-us') }}"><i class="fas fa-angle-right me-2"></i>Contact Us</a></li>
                                 <li><a href="{{ route('results.overall') }}"><i class="fas fa-angle-right me-2"></i>School Performance</a></li>
+                                <li><a href="{{ route('login') }}"><i class="fas fa-lock me-2"></i>Admin Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,7 +75,7 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom border-top">
         <div class="container py-3">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">

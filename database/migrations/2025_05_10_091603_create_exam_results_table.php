@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('exam_results', function (Blueprint $table) {
             $table->id();
+            $table->string('exam_name');
+            $table->integer('year');
+            $table->string('class')->nullable();
+            $table->json('results_data')->nullable();
+            $table->json('summary')->nullable();
             $table->timestamps();
         });
     }

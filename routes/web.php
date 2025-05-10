@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DownloadController as AdminDownloadController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\ExamResultController as AdminExamResultController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\SchoolInfoController as AdminSchoolInfoController;
 use App\Http\Controllers\CategoryController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExamResultController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,12 +30,9 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about-us', [HomeController::class, 'about'])->name('about');
-Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
-Route::get('/admissions', [HomeController::class, 'admissions'])->name('admissions');
-Route::get('/academics', [HomeController::class, 'academics'])->name('academics');
-Route::get('/fees', [HomeController::class, 'fees'])->name('fees');
-Route::get('/apply', [HomeController::class, 'apply'])->name('apply');
+
+// Dynamic Pages Route - should be placed after all other specific routes
+Route::get('/{slug}', [PageController::class, 'show'])->name('page.show')->where('slug', '^(?!admin|news|categories|events|downloads|results|login|logout|api).*$');
 
 // Blog Routes
 Route::get('/news', [PostController::class, 'index'])->name('posts.index');
@@ -77,6 +76,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // School Info Management
     Route::get('school-info', [AdminSchoolInfoController::class, 'edit'])->name('school-info.edit');
     Route::put('school-info', [AdminSchoolInfoController::class, 'update'])->name('school-info.update');
+
+    // Pages Management
+    Route::resource('pages', AdminPageController::class);
+    Route::post('pages/{page}/sections', [AdminPageController::class, 'addSection'])->name('pages.sections.add');
+    Route::put('pages/{page}/sections/{section}', [AdminPageController::class, 'updateSection'])->name('pages.sections.update');
+    Route::delete('pages/{page}/sections/{section}', [AdminPageController::class, 'deleteSection'])->name('pages.sections.delete');
+    Route::post('pages/{page}/sections/reorder', [AdminPageController::class, 'reorderSections'])->name('pages.sections.reorder');
 });
 
 // Authentication Routes

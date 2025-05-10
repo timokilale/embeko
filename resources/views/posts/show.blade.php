@@ -20,15 +20,12 @@
                 <h1 class="mb-3">{{ $post->title }}</h1>
                 <div class="d-flex align-items-center mb-3">
                     <span class="badge bg-primary me-2">{{ $post->category->name }}</span>
-                    <span class="text-muted me-3">
-                        <i class="far fa-calendar-alt me-1"></i> {{ $post->published_at->format('M d, Y') }}
-                    </span>
                     <span class="text-muted">
-                        <i class="far fa-user me-1"></i> {{ $post->user->name }}
+                        <i class="far fa-calendar-alt me-1"></i> {{ $post->published_at->format('M d, Y') }}
                     </span>
                 </div>
             </div>
-            
+
             <!-- Featured Image -->
             <div class="mb-4">
                 @if($post->featured_image)
@@ -37,7 +34,7 @@
                     <img src="{{ asset('images/news-placeholder.jpg') }}" class="img-fluid rounded" alt="{{ $post->title }}">
                 @endif
             </div>
-            
+
             <!-- Post Content -->
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
@@ -46,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Share Buttons -->
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
@@ -67,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Related Posts -->
             @if($relatedPosts->count() > 0)
                 <h4 class="mb-3">Related Posts</h4>
@@ -91,7 +88,7 @@
                 </div>
             @endif
         </div>
-        
+
         <!-- Sidebar -->
         <div class="col-lg-4">
             <!-- Categories -->
@@ -112,7 +109,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Recent Posts -->
             <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-header bg-primary text-white">
@@ -142,7 +139,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Subscribe -->
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-primary text-white">

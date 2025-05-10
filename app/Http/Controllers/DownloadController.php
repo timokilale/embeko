@@ -27,7 +27,7 @@ class DownloadController extends Controller
         // Filter by category
         if ($request->has('category')) {
             $category = $request->category;
-            $query->where('category', $category);
+            $query->where('category_type', $category);
         }
 
         $downloads = $query->latest()->paginate(12);

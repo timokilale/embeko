@@ -29,11 +29,11 @@
         const mapWrapper = document.getElementById('mapWrapper');
         const toggleIcon = document.querySelector('.toggle-icon');
         const toggleText = document.querySelector('.toggle-text');
-        
+
         if (toggleBtn && mapWrapper) {
             toggleBtn.addEventListener('click', function() {
                 mapWrapper.classList.toggle('expanded');
-                
+
                 if (mapWrapper.classList.contains('expanded')) {
                     toggleIcon.classList.remove('fa-chevron-down');
                     toggleIcon.classList.add('fa-chevron-up');

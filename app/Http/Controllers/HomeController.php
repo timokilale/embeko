@@ -35,8 +35,8 @@ class HomeController extends Controller
      */
     public function about()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('about', compact('schoolInfo'));
+        // Redirect to the dynamic about page
+        return redirect()->route('page.show', 'about-us');
     }
 
     /**
@@ -44,8 +44,8 @@ class HomeController extends Controller
      */
     public function contact()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('contact', compact('schoolInfo'));
+        // Redirect to the dynamic contact page
+        return redirect()->route('page.show', 'contact-us');
     }
 
     /**
@@ -53,8 +53,8 @@ class HomeController extends Controller
      */
     public function admissions()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('admissions', compact('schoolInfo'));
+        // Redirect to the dynamic admissions page
+        return redirect()->route('page.show', 'admissions');
     }
 
     /**
@@ -62,8 +62,8 @@ class HomeController extends Controller
      */
     public function academics()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('academics', compact('schoolInfo'));
+        // Redirect to the dynamic academics page
+        return redirect()->route('page.show', 'academics');
     }
 
     /**
@@ -71,8 +71,8 @@ class HomeController extends Controller
      */
     public function fees()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('fees', compact('schoolInfo'));
+        // Redirect to the dynamic fees page
+        return redirect()->route('page.show', 'fees');
     }
 
     /**
@@ -80,7 +80,7 @@ class HomeController extends Controller
      */
     public function apply()
     {
-        $schoolInfo = SchoolInfo::getInfo();
-        return view('apply', compact('schoolInfo'));
+        // Redirect to the dynamic admissions page
+        return redirect()->route('page.show', 'admissions');
     }
 }

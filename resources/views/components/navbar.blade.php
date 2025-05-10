@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-warning shadow">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <!-- Add a brand/logo for mobile view -->
         <a class="navbar-brand d-lg-none" href="{{ route('home') }}">
@@ -18,17 +18,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
+                    <a class="nav-link {{ request()->is('about-us') ? 'active' : '' }}" href="{{ route('page.show', 'about-us') }}">
                         <i class="fas fa-info-circle me-1"></i> About Us
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('apply') ? 'active' : '' }}" href="{{ route('apply') }}">
+                    <a class="nav-link {{ request()->is('admissions') ? 'active' : '' }}" href="{{ route('page.show', 'admissions') }}">
                         <i class="fas fa-file-alt me-1"></i> How to Apply
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('fees') ? 'active' : '' }}" href="{{ route('fees') }}">
+                    <a class="nav-link {{ request()->is('fees') ? 'active' : '' }}" href="{{ route('page.show', 'fees') }}">
                         <i class="fas fa-money-bill-wave me-1"></i> Fees Structure
                     </a>
                 </li>
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">
+                    <a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}" href="{{ route('page.show', 'contact-us') }}">
                         <i class="fas fa-envelope me-1"></i> Contact Us
                     </a>
                 </li>

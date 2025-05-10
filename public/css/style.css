@@ -412,7 +412,10 @@ body {
     .card-img-top {
         height: 180px;
     }
+}
 
+/* Mobile optimizations for map */
+@media (max-width: 767.98px) {
     .map-wrapper {
         max-height: 150px;
     }

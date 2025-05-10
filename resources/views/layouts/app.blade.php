@@ -20,6 +20,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- Minimalist Theme CSS (overrides) -->
+    <link rel="stylesheet" href="{{ asset('css/minimalist.css') }}">
+
     @stack('styles')
 </head>
 <body>
@@ -41,11 +44,17 @@
         </div>
     </div>
 
+    <!-- Confirmation Modal -->
+    @include('components.confirmation-modal')
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script src="{{ asset('js/script.js') }}"></script>
+
+    <!-- Confirmation Dialog JS -->
+    <script src="{{ asset('js/confirmation.js') }}"></script>
 
     @stack('scripts')
 </body>

@@ -12,11 +12,11 @@
                 Embeko Secondary School is a premier educational institution committed to providing quality education with excellence.
             </p>
             <p>
-                Founded in 2005, Embeko Secondary School has established itself as one of the leading secondary schools in Tanzania. 
+                Founded in 2005, Embeko Secondary School has established itself as one of the leading secondary schools in Tanzania.
                 Our school is dedicated to nurturing well-rounded individuals who excel academically and possess strong moral values.
             </p>
             <p>
-                At Embeko, we believe in the power of education to transform lives and communities. Our comprehensive approach to education 
+                At Embeko, we believe in the power of education to transform lives and communities. Our comprehensive approach to education
                 ensures that students receive not only academic knowledge but also develop critical thinking skills, creativity, and character.
             </p>
         </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Mission & Vision -->
     <div class="row mb-5">
         <div class="col-md-6 mb-4 mb-md-0">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Core Values -->
     <div class="mb-5">
         <h2 class="text-center mb-4">Our Core Values</h2>
@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- School History -->
     <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
@@ -115,20 +115,20 @@
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <p>
-                        Embeko Secondary School was established in 2005 with a vision to provide quality education to students in Tanzania. 
+                        Embeko Secondary School was established in 2005 with a vision to provide quality education to students in Tanzania.
                         Starting with just 120 students and 8 teachers, the school has grown significantly over the years.
                     </p>
                     <p>
-                        In 2010, the school expanded its facilities to include modern science laboratories, a computer lab, and a library. 
+                        In 2010, the school expanded its facilities to include modern science laboratories, a computer lab, and a library.
                         This expansion was part of our commitment to providing students with the resources they need to excel in their studies.
                     </p>
                     <p>
-                        By 2015, Embeko had become one of the top-performing schools in the region, with our students consistently achieving 
-                        excellent results in national examinations. Our alumni have gone on to pursue successful careers in various fields, 
+                        By 2015, Embeko had become one of the top-performing schools in the region, with our students consistently achieving
+                        excellent results in national examinations. Our alumni have gone on to pursue successful careers in various fields,
                         including medicine, engineering, law, and business.
                     </p>
                     <p>
-                        Today, Embeko Secondary School continues to uphold its tradition of excellence, with a focus on holistic education 
+                        Today, Embeko Secondary School continues to uphold its tradition of excellence, with a focus on holistic education
                         that prepares students for the challenges of the 21st century.
                     </p>
                 </div>
@@ -174,7 +174,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- School Leadership -->
     <div class="mb-5">
         <h2 class="text-center mb-4">School Leadership</h2>
@@ -211,7 +211,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- CTA Section -->
     <div class="card bg-primary text-white border-0 shadow">
         <div class="card-body p-5 text-center">
@@ -220,10 +220,10 @@
                 Discover the Embeko difference and give your child the education they deserve.
             </p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="{{ route('admissions') }}" class="btn btn-light btn-lg">
+                <a href="{{ route('page.show', 'admissions') }}" class="btn btn-light btn-lg">
                     <i class="fas fa-user-plus me-2"></i> Apply Now
                 </a>
-                <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+                <a href="{{ route('page.show', 'contact-us') }}" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-envelope me-2"></i> Contact Us
                 </a>
             </div>

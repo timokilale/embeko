@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Embeko Secondary School</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <!-- Minimalist Theme CSS -->
+    <link rel="stylesheet" href="{{ asset('css/minimalist.css') }}">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -29,42 +32,63 @@
             padding: 2rem;
         }
         .card {
-            border-radius: 1rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            border: 1px solid #000 !important;
             overflow: hidden;
         }
         .card-header {
-            background-color: #0d6efd;
-            color: white;
+            background-color: #ffffff !important;
+            color: #000000 !important;
             text-align: center;
             padding: 1.5rem;
+            border-bottom: 1px solid #000 !important;
         }
         .logo {
             max-width: 80px;
             margin-bottom: 1rem;
         }
         .btn-primary {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border: 1px solid #000000 !important;
             width: 100%;
             padding: 0.75rem;
             font-weight: 600;
+            border-radius: 0 !important;
+        }
+        .btn-primary:hover {
+            background-color: #000000 !important;
+            color: #ffffff !important;
         }
         .form-control {
             padding: 0.75rem;
+            border-radius: 0 !important;
+            border: 1px solid #000000 !important;
+        }
+        .input-group-text {
+            border-radius: 0 !important;
+            background-color: #ffffff !important;
+            border: 1px solid #000000 !important;
         }
         .form-check-label {
-            color: #6c757d;
+            color: #000000;
         }
         .back-link {
             display: block;
             text-align: center;
             margin-top: 1rem;
-            color: #6c757d;
+            color: #000000;
             text-decoration: none;
         }
         .back-link:hover {
-            color: #0d6efd;
+            text-decoration: underline !important;
+        }
+        .alert {
+            border-radius: 0 !important;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border: 1px solid #000000 !important;
         }
     </style>
 </head>
@@ -86,7 +110,7 @@
                         </ul>
                     </div>
                 @endif
-                
+
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mb-3">
@@ -117,7 +141,7 @@
             <i class="fas fa-arrow-left me-1"></i> Back to Website
         </a>
     </div>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

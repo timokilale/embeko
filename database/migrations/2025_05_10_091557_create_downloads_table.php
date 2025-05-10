@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('downloads', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('file_path');
+            $table->string('file_type')->nullable();
+            $table->string('file_size')->nullable();
+            $table->string('category_type')->nullable(); // Using category_type instead of category
+            $table->integer('download_count')->default(0);
             $table->timestamps();
         });
     }

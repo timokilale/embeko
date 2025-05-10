@@ -5,7 +5,7 @@
 @section('content')
 <div class="container py-5">
     <h1 class="mb-4">Admissions</h1>
-    
+
     <!-- Admissions Overview -->
     <div class="row mb-5">
         <div class="col-lg-6 mb-4 mb-lg-0">
@@ -25,7 +25,7 @@
                         <a href="{{ route('apply') }}" class="btn btn-primary">
                             <i class="fas fa-user-plus me-2"></i> Apply Now
                         </a>
-                        <a href="{{ route('downloads.index', ['category' => 'forms']) }}" class="btn btn-outline-primary ms-2">
+                        <a href="{{ route('downloads.index') }}" class="btn btn-outline-primary ms-2">
                             <i class="fas fa-download me-2"></i> Download Forms
                         </a>
                     </div>
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Application Process -->
     <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Important Dates -->
     <div class="row mb-5">
         <div class="col-md-6 mb-4 mb-md-0">
@@ -170,7 +170,7 @@
                 </div>
                 <div class="card-body">
                     <p>Our tuition and fees are structured to provide quality education while remaining affordable. The following are the fees for the 2024/2025 academic year:</p>
-                    
+
                     <div class="mb-4">
                         <h5>Form One to Form Four</h5>
                         <div class="table-responsive">
@@ -202,7 +202,7 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div>
                         <h5>Form Five and Form Six</h5>
                         <div class="table-responsive">
@@ -234,7 +234,7 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="mt-3">
                         <a href="{{ route('fees') }}" class="btn btn-outline-primary">
                             <i class="fas fa-info-circle me-2"></i> View Detailed Fee Structure
@@ -244,7 +244,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Scholarships -->
     <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
@@ -288,18 +288,18 @@
                 </div>
             </div>
             <div class="text-center mt-3">
-                <a href="{{ route('downloads.index', ['category' => 'scholarships']) }}" class="btn btn-primary">
+                <a href="{{ route('downloads.index') }}" class="btn btn-primary">
                     <i class="fas fa-download me-2"></i> Download Scholarship Application Form
                 </a>
             </div>
         </div>
     </div>
-    
+
     <!-- FAQ Section -->
     <div class="card border-0 shadow-sm">
         <div class="card-body">
             <h2 class="card-title mb-4">Frequently Asked Questions</h2>
-            
+
             <div class="accordion" id="admissionsFAQ">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -313,7 +313,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -326,7 +326,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -339,7 +339,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -352,7 +352,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">

@@ -1,0 +1,249 @@
+/* Minimalist Black and White Theme */
+
+/* Reset colors and border-radius */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --success-color: #000000;
+    --warning-color: #000000;
+    --danger-color: #000000;
+    --light-color: #ffffff;
+    --dark-color: #000000;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+/* Remove all border-radius */
+.card, .btn, .form-control, .badge, .alert, .nav-link, .dropdown-menu,
+.list-group-item, .modal-content, .navbar, .pagination, .progress,
+.input-group-text, .custom-select, .custom-file-label, .custom-checkbox,
+.custom-radio, .custom-switch, .toast, .tooltip, .popover, .carousel {
+    border-radius: 0 !important;
+}
+
+/* Remove box-shadows */
+.card, .btn, .dropdown-menu, .modal-content, .toast, .shadow, .shadow-sm,
+.shadow-lg, .navbar, .form-control:focus {
+    box-shadow: none !important;
+}
+
+/* Card styles */
+.card {
+    border: 1px solid #000 !important;
+    transition: none !important;
+    transform: none !important;
+    background-color: #fff !important;
+}
+
+.card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.card-header, .card-footer {
+    background-color: #fff !important;
+    border-bottom: 1px solid #000 !important;
+    border-top: 1px solid #000 !important;
+}
+
+.card-title {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Button styles */
+.btn {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    transition: none !important;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+.btn-primary:hover, .btn-success:hover, .btn-info:hover, .btn-warning:hover, .btn-danger:hover,
+.btn-primary:focus, .btn-success:focus, .btn-info:focus, .btn-warning:focus, .btn-danger:focus,
+.btn-primary:active, .btn-success:active, .btn-info:active, .btn-warning:active, .btn-danger:active {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid #000 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000 !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #000 !important;
+    text-decoration: underline;
+    background-color: transparent !important;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #000 !important;
+}
+
+/* Badge styles */
+.badge {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+/* Alert styles */
+.alert {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+/* Form styles */
+.form-control {
+    border: 1px solid #000 !important;
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.form-control:focus {
+    border-color: #000 !important;
+}
+
+/* Table styles */
+.table {
+    color: #000 !important;
+    border-color: #000 !important;
+}
+
+.table th {
+    background-color: #fff !important;
+    border-bottom: 2px solid #000 !important;
+    font-weight: bold !important;
+}
+
+.table td {
+    border-color: #000 !important;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-top: 1px solid #000 !important;
+}
+
+.footer-heading {
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+.footer-links a {
+    color: #000 !important;
+}
+
+.footer-bottom {
+    background-color: #fff !important;
+    border-top: 1px solid #000 !important;
+}
+
+/* Header styles - keeping the original fuzzy design */
+/* Exclude header from minimalist styling */
+#header, #mobile-header, .header-height, .carousel-container, .header-overlay,
+.school-info-container, .school-info-background, .school-title, .reg-number,
+.school-motto, .logo-div, .logo-img, .mobile-logo, .mobile-school-title,
+.mobile-school-motto {
+    /* Reset to original styles */
+    border-radius: initial !important;
+    box-shadow: initial !important;
+    border: initial !important;
+    background: initial !important;
+    color: initial !important;
+    transition: initial !important;
+}
+
+/* Keep original header overlay */
+.header-overlay {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Keep original school info background */
+.school-info-background {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 10px !important;
+}
+
+/* Remove animations and transitions except for header elements */
+*:not(#header *):not(#mobile-header *):not(.carousel *):not(.carousel-item):not(.carousel-item *) {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Allow carousel animations */
+.carousel-fade .carousel-item {
+    transition: opacity .6s ease !important;
+}
+
+.carousel-item.active,
+.carousel-item-next.carousel-item-start,
+.carousel-item-prev.carousel-item-end {
+    transition: transform .6s ease-in-out !important;
+}
+
+/* Remove hover effects */
+a:hover, button:hover {
+    text-decoration: underline !important;
+}
+
+/* Section titles */
+.section-title::after {
+    background-color: #000 !important;
+}
+
+/* Pagination */
+.pagination .page-link {
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 1px solid #000 !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+    background-color: #fff !important;
+    border: 1px solid #000 !important;
+}
+
+.dropdown-item {
+    color: #000 !important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: #f8f8f8 !important;
+    color: #000 !important;
+}

@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             SchoolInfoSeeder::class,
             PostSeeder::class,
             EventSeeder::class,
+            ExamResultSeeder::class,
+            PagesSeeder::class,
         ]);
     }
 }
