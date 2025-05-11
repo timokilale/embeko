@@ -34,8 +34,16 @@
             <!-- Navbar -->
             @include('components.navbar')
 
+            <!-- Carousel Section -->
+            <div class="carousel-section d-none d-md-block">
+                @include('components.carousel')
+            </div>
+
             <!-- Main Content -->
             <main>
+                <div class="container mt-3">
+                    @include('components.flash-message')
+                </div>
                 @yield('content')
             </main>
 

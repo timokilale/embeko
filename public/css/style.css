@@ -21,9 +21,10 @@ body {
 
 /* Header Styles */
 .header-height {
-    height: 300px;
+    height: 180px; /* Reduced height */
     position: relative;
     overflow: hidden;
+    background-color: white; /* White background */
 }
 
 .carousel-container {
@@ -41,30 +42,23 @@ body {
     object-position: center;
 }
 
-.header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 2;
-}
+/* No overlay needed with white background */
 
 .school-info-container {
     position: relative;
     z-index: 3;
 }
 
-.school-info-background {
-    padding: 20px;
+.school-info-content {
+    padding: 10px;
     border-radius: 10px;
 }
 
 .school-title {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced font size */
     font-weight: 700;
     margin-bottom: 0;
+    line-height: 1.2; /* Tighter line height */
 }
 
 .reg-number {
@@ -78,7 +72,7 @@ body {
 }
 
 .logo-img {
-    max-width: 120px;
+    max-width: 90px; /* Smaller logo for reduced header */
 }
 
 /* Mobile Header */
@@ -104,6 +98,13 @@ body {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    display: block !important; /* Ensure navbar is visible */
+    position: relative;
+    z-index: 100; /* Make sure navbar is above other elements */
+}
+
+.navbar-toggler {
+    background-color: white;
 }
 
 .navbar-nav {
@@ -111,19 +112,21 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row !important;
 }
 
 .navbar-nav .nav-link {
     padding: 1rem 1rem;
     transition: all 0.3s ease;
+    color: white !important;
 }
 
 .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .navbar-nav .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     font-weight: 600;
 }
 
@@ -294,6 +297,23 @@ body {
 }
 
 /* Carousel Styles */
+.carousel-section {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-section .carousel {
+    height: 100%;
+}
+
+.carousel-section .carousel-img {
+    height: 400px;
+    object-fit: cover;
+    object-position: center top;
+}
+
 .carousel-buttons {
     position: absolute;
     bottom: 20px;
@@ -381,6 +401,8 @@ body {
     .navbar-nav {
         text-align: center;
         margin-top: 1rem;
+        flex-direction: row !important;
+        justify-content: center !important;
     }
 
     .navbar-collapse {

@@ -1,5 +1,29 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure navbar is visible and items are in a row
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        navbar.style.display = 'block';
+        navbar.style.visibility = 'visible';
+        navbar.style.backgroundColor = '#FFD700'; // Gold color
+
+        // Ensure navbar items are in a row
+        const navbarNav = document.querySelector('.navbar-nav');
+        if (navbarNav) {
+            navbarNav.style.display = 'flex';
+            navbarNav.style.flexDirection = 'row';
+            navbarNav.style.flexWrap = 'wrap';
+            navbarNav.style.justifyContent = 'center';
+        }
+
+        // Update nav links color for better contrast with gold background
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.style.color = '#333';
+        });
+    }
+
+    // No need for text shadow with white background
     // Initialize tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {

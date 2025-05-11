@@ -31,8 +31,11 @@ use Illuminate\Support\Facades\Route;
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Newsletter Subscription
+Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
 // Dynamic Pages Route - should be placed after all other specific routes
-Route::get('/{slug}', [PageController::class, 'show'])->name('page.show')->where('slug', '^(?!admin|news|categories|events|downloads|results|login|logout|api).*$');
+Route::get('/{slug}', [PageController::class, 'show'])->name('page.show')->where('slug', '^(?!admin|news|categories|events|downloads|results|login|logout|api|newsletter).*$');
 
 // Blog Routes
 Route::get('/news', [PostController::class, 'index'])->name('posts.index');

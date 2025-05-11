@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #FFD700;">
     <div class="container-fluid">
         <!-- Add a brand/logo for mobile view -->
         <a class="navbar-brand d-lg-none" href="{{ route('home') }}">
@@ -11,7 +11,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto d-flex flex-row flex-wrap justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
                         <i class="fas fa-home me-1"></i> Home

@@ -109,7 +109,7 @@
     </div>
 
     <!-- School History -->
-    <div class="card border-0 shadow-sm mb-5">
+    <!--<div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
             <h2 class="card-title mb-4">Our History</h2>
             <div class="row">
@@ -173,7 +173,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- School Leadership -->
     <div class="mb-5">

@@ -84,26 +84,34 @@ body {
     color: #fff !important;
 }
 
-/* Navbar styles */
+/* Navbar styles - keeping the original design */
+/* Exclude navbar from minimalist styling */
+.navbar, .navbar-nav, .nav-link, .navbar-toggler {
+    /* Reset to original styles */
+    border-radius: initial !important;
+    box-shadow: initial !important;
+    border: initial !important;
+    transition: initial !important;
+    display: block !important;
+}
+
+/* Ensure navbar background and text colors */
 .navbar {
-    background-color: #fff !important;
-    border-bottom: 1px solid #000 !important;
+    background-color: #FFD700 !important; /* Gold color */
+    display: block !important;
+    position: relative !important;
+    z-index: 100 !important;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: #000 !important;
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link.active {
-    color: #000 !important;
-    text-decoration: underline;
-    background-color: transparent !important;
-}
-
-.navbar-light .navbar-toggler {
-    border-color: #000 !important;
+.navbar-nav .nav-link {
+    color: #333 !important; /* Dark text for better contrast with gold background */
 }
 
 /* Badge styles */
@@ -173,24 +181,28 @@ body {
 #header, #mobile-header, .header-height, .carousel-container, .header-overlay,
 .school-info-container, .school-info-background, .school-title, .reg-number,
 .school-motto, .logo-div, .logo-img, .mobile-logo, .mobile-school-title,
-.mobile-school-motto {
+.mobile-school-motto, .carousel-section {
     /* Reset to original styles */
     border-radius: initial !important;
     box-shadow: initial !important;
     border: initial !important;
-    background: initial !important;
     color: initial !important;
     transition: initial !important;
 }
 
-/* Keep original header overlay */
-.header-overlay {
-    background: rgba(255, 255, 255, 0.7) !important;
+/* Ensure header has white background */
+.header-height {
+    background-color: white !important;
+    height: 180px !important; /* Reduced height */
 }
 
-/* Keep original school info background */
-.school-info-background {
-    background: rgba(255, 255, 255, 0.8) !important;
+/* Remove header overlay */
+.header-overlay {
+    display: none !important;
+}
+
+/* School info content styling */
+.school-info-content {
     border-radius: 10px !important;
 }
 

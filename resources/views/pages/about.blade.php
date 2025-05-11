@@ -218,49 +218,63 @@
 /* Timeline styling */
 .timeline {
     position: relative;
-    padding-left: 30px;
+    padding-left: 70px; /* Increased padding to make room for years */
+    margin-top: 30px;
 }
 
 .timeline:before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 40px; /* Moved line to the right */
     top: 0;
     height: 100%;
     width: 2px;
-    background-color: #dee2e6;
+    background-color: #FFD700; /* Gold color to match navbar */
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Increased spacing between items */
+    clear: both; /* Prevent overlapping */
 }
 
 .timeline-year {
     position: absolute;
-    left: -50px;
+    left: -60px; /* Positioned further left */
     top: 0;
+    width: 50px; /* Wider to fit years */
+    text-align: right;
     font-weight: bold;
-    color: #007bff;
+    color: #333;
+    font-size: 1rem;
 }
 
 .timeline-content {
     padding-left: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 10px;
 }
 
 .timeline-content h5 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .timeline-item:before {
     content: '';
     position: absolute;
-    left: -38px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
+    left: -30px; /* Adjusted position */
+    top: 10px;
+    width: 16px; /* Larger dot */
+    height: 16px;
     border-radius: 50%;
-    background-color: #007bff;
+    background-color: #FFD700; /* Gold color to match navbar */
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #FFD700;
+    z-index: 1;
 }
 </style>
 @endsection
