@@ -90,7 +90,7 @@ class PagesSeeder extends Seeder
             ],
             [
                 'title' => 'Contact Us',
-                'slug' => 'contact',
+                'slug' => 'contact-us',
                 'description' => 'Reach out to Embeko Secondary School – contact information and inquiry form.',
                 'layout' => 'contact',
                 'meta_title' => 'Contact - Embeko Secondary School',
@@ -99,7 +99,7 @@ class PagesSeeder extends Seeder
             ],
             [
                 'title' => 'Academic Performance',
-                'slug' => 'performance',
+                'slug' => 'overall-performance',
                 'description' => 'View the academic performance and rankings of Embeko Secondary School.',
                 'layout' => 'overall-performance',
                 'meta_title' => 'Performance - Embeko Secondary School',

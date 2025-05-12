@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\ExamResult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class ExamResultController extends Controller
 {
@@ -18,13 +21,27 @@ class ExamResultController extends Controller
     /**
      * Display the specified exam result.
      */
+
     public function show($exam, $year)
     {
-        $examResult = ExamResult::where('exam_name', $exam)
-            ->where('year', $year)
-            ->first();
+        $exam = Str::lower($exam);
+        $path = "exam_results/{$exam}_{$year}.json"; // Use forward slashes
+        $filePath = storage_path("app/public/{$path}");
 
-        return view('results.show', compact('examResult', 'exam', 'year'));
+        if (file_exists($filePath)) {
+            $jsonData = file_get_contents($filePath);
+            $examData = json_decode($jsonData, true);
+        } else {
+            $examData = null;
+        }
+
+        // dd($examData);
+
+        $exam = Str::upper($exam);
+
+        $examResult = $examData;
+
+        return view('results.show', compact('examResult', 'exam', 'year', 'examData'));
     }
 
     /**

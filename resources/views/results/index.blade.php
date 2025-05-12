@@ -25,7 +25,7 @@
     </div>
     
     <!-- Results Search Form -->
-    <div class="card border-0 shadow-sm mb-5">
+    <!-- <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
             <h4 class="card-title mb-4">Search Examination Results</h4>
             <form action="{{ route('results.show', ['exam' => 'SEARCH', 'year' => 'SEARCH']) }}" method="GET" id="resultsSearchForm">
@@ -58,7 +58,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
     
     <!-- Recent Examination Results -->
     <h3 class="mb-4">Recent Examination Results</h3>
@@ -70,8 +70,8 @@
                 </div>
                 <div class="card-body">
                     <div class="list-group">
-                        @for($year = date('Y'); $year >= date('Y')-2; $year--)
-                            <a href="{{ route('results.show', ['exam' => 'CSEE', 'year' => $year]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        @for($year = date('Y'); $year >= date('Y')-3; $year--)
+                            <a href="{{ route('results.show', ['exam' => 'csee', 'year' => $year]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 <span>
                                     <i class="fas fa-graduation-cap me-2"></i> 
                                     CSEE {{ $year }} Results
@@ -96,7 +96,7 @@
                 </div>
                 <div class="card-body">
                     <div class="list-group">
-                        @for($year = date('Y'); $year >= date('Y')-2; $year--)
+                        @for($year = date('Y'); $year >= date('Y')-3; $year--)
                             <a href="{{ route('results.show', ['exam' => 'FTNA', 'year' => $year]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 <span>
                                     <i class="fas fa-graduation-cap me-2"></i> 

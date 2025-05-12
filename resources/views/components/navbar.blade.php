@@ -57,11 +57,6 @@
                         <i class="fas fa-envelope me-1"></i> Contact Us
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('results.overall') ? 'active' : '' }}" href="{{ route('results.overall') }}">
-                        <i class="fas fa-chart-line me-1"></i> School Performance
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
