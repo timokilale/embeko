@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ExamResultController as AdminExamResultController
 use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\SchoolInfoController as AdminSchoolInfoController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventController;
@@ -75,6 +76,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     // Exam Results Management
     Route::resource('exam-results', AdminExamResultController::class);
+
+    //User Routes
+    Route::resource('users',UserController::class);
 
     // School Info Management
     Route::get('school-info', [AdminSchoolInfoController::class, 'edit'])->name('school-info.edit');

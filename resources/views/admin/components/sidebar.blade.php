@@ -34,5 +34,9 @@
         <a href="{{ route('admin.pages.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.pages.*') ? 'fw-bold text-decoration-underline' : '' }}">
             <i class="fas fa-file-alt me-2"></i> Website Pages
         </a>
+
+        <a href="{{ route('admin.users.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.users.*') ? 'fw-bold text-decoration-underline' : '' }}">
+            <i class="fas fa-users me-2"></i> Users
+        </a>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <!-- Desktop header -->
-<header id="header" class="bg-secondary text-black justify-content-center py-3 d-none d-md-block header-height">
+<header id="header" class="text-black justify-content-center py-3 d-none d-md-block header-height">
     <div class="container-fluid position-relative">
         <div class="row align-items-center px-md-5 px-lg-5 py-2">
             <div class="col-md-3 col-lg-2 text-center logo-div">
