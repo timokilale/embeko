@@ -22,7 +22,7 @@
                         We welcome applications from students who are eager to learn, willing to work hard, and ready to contribute positively to our school community.
                     </p>
                     <div class="mt-4">
-                        <a href="{{ route('apply') }}" class="btn btn-primary">
+                        <a href="/admissions" class="btn btn-primary">
                             <i class="fas fa-user-plus me-2"></i> Apply Now
                         </a>
                         <a href="{{ route('downloads.index') }}" class="btn btn-outline-primary ms-2">
@@ -236,7 +236,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <a href="{{ route('fees') }}" class="btn btn-outline-primary">
+                        <a href="/fees" class="btn btn-outline-primary">
                             <i class="fas fa-info-circle me-2"></i> View Detailed Fee Structure
                         </a>
                     </div>

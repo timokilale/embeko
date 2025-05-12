@@ -13,10 +13,20 @@ class PageController extends Controller
      */
     public function show($slug)
     {
+
+        
+        
         $page = Page::where('slug', $slug)->published()->with('sections')->firstOrFail();
 
         // Determine which view to use based on the page's layout
         $view = 'pages.' . $page->layout;
+
+        if($page->layout === 'admission'){
+            $p = Page::where('slug','admissions')->first();
+            $data = ['page' => $p];
+            $view = 'pages.admissions';
+            return view($view, $data);
+        }
 
         // Check if the view exists, otherwise use a default view
         if (!view()->exists($view)) {
@@ -32,6 +42,8 @@ class PageController extends Controller
                 ->get();
             $data['leaders'] = $leaders;
         }
+
+        
 
         return view($view, $data);
     }

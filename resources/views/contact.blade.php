@@ -145,9 +145,7 @@
     <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
             <h2 class="card-title mb-4">Our Location</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnMTIuMCJTIDM1wrAzNCcyNS4wIkU!5e0!3m2!1sen!2stz!4v1620000000000!5m2!1sen!2stz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+            @include('components.maps')
         </div>
     </div>
     
@@ -178,7 +176,7 @@
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            <p>To apply for admission, you can visit our <a href="{{ route('admissions') }}">Admissions page</a> for detailed information about the application process. You can also contact our admissions office directly at admissions@embeko.ac.tz or call +255 123 456 789.</p>
+                            <p>To apply for admission, you can visit our <a href= "/admissions">Admissions page</a> for detailed information about the application process. You can also contact our admissions office directly at admissions@embeko.ac.tz or call +255 123 456 789.</p>
                         </div>
                     </div>
                 </div>
