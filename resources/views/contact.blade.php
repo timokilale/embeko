@@ -96,9 +96,14 @@
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
+                    @if (session('success'))
+                        <div class="bg-suceess text-white p-4">
+                            <p class="text-center">{{ session('success') }}</p>
+                        </div>
+                    @endif
                     <h2 class="card-title mb-4">Send Us a Message</h2>
                     
-                    <form action="#" method="POST" class="contact-form">
+                    <form action="{{ route('admin.messages.store') }}" method="POST" class="contact-form">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>

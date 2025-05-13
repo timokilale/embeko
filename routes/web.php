@@ -13,7 +13,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExamResultController;
+use App\Http\Controllers\FeeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +49,8 @@ Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{event:slug}', [EventController::class, 'show'])->name('events.show');
 
+
+
 // Downloads Routes
 Route::get('/downloads', [DownloadController::class, 'index'])->name('downloads.index');
 Route::get('/downloads/{download}', [DownloadController::class, 'download'])->name('downloads.download');
@@ -59,7 +63,7 @@ Route::get('/visualize-data/{exam}/{year}', [ExamResultController::class, 'visua
 Route::get('/overall-performance', [ExamResultController::class, 'overallPerformance'])->name('results.overall');
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth','check.role'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Posts Management
@@ -78,7 +82,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('exam-results', AdminExamResultController::class);
 
     //User Routes
-    Route::resource('users',UserController::class);
+    Route::resource('users', UserController::class);
+
+    //Fee routes
+
+    Route::resource('fees', FeeController::class);
 
     // School Info Management
     Route::get('school-info', [AdminSchoolInfoController::class, 'edit'])->name('school-info.edit');
@@ -101,6 +109,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // Welcome Message Management
     Route::resource('welcome-messages', App\Http\Controllers\Admin\WelcomeMessageController::class);
     Route::post('welcome-messages/{id}/set-active', [App\Http\Controllers\Admin\WelcomeMessageController::class, 'setActive'])->name('welcome-messages.set-active');
+
+    //Messages routes
+
+    Route::resource('messages', MessageController::class);
 });
 
 // Authentication Routes

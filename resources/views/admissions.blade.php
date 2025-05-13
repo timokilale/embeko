@@ -47,7 +47,7 @@
                             <li>Interview with the student and parents/guardians</li>
                         </ul>
                     </div>
-                    <div class="mb-4">
+                    <!-- <div class="mb-4">
                         <h5><i class="fas fa-user-graduate text-primary me-2"></i> Form Five Admission</h5>
                         <ul>
                             <li>Completed application form</li>
@@ -57,7 +57,7 @@
                             <li>Passport-sized photographs (4)</li>
                             <li>Interview with the student and parents/guardians</li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div>
                         <h5><i class="fas fa-user-graduate text-primary me-2"></i> Transfer Students</h5>
                         <ul>

@@ -180,8 +180,8 @@
         <h2 class="text-center mb-4">School Leadership</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/principal.jpg') }}" class="card-img-top" alt="School Principal">
+                <div class="card border-0 shadow-sm text-center pt-6">
+                    <img src="{{ asset('images/principal.jpg') }}" class="card-img-top mt-3" alt="School Principal">
                     <div class="card-body">
                         <h4 class="card-title">Dr. John Doe</h4>
                         <p class="text-muted">Principal</p>
@@ -190,8 +190,8 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/deputy-principal.jpg') }}" class="card-img-top" alt="Deputy Principal">
+                <div class="card border-0 shadow-sm text-center pt-6">
+                    <img src="{{ asset('images/deputy-principal.jpg') }}" class="card-img-top mt-3" alt="Deputy Principal">
                     <div class="card-body">
                         <h4 class="card-title">Mrs. Jane Smith</h4>
                         <p class="text-muted">Deputy Principal (Academics)</p>
@@ -200,8 +200,8 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/admin-officer.jpg') }}" class="card-img-top" alt="Administrative Officer">
+                <div class="card border-0 shadow-sm text-center pt-6">
+                    <img src="{{ asset('images/admin-officer.jpg') }}" class="card-img-top mt-3" alt="Administrative Officer">
                     <div class="card-body">
                         <h4 class="card-title">Mr. David Johnson</h4>
                         <p class="text-muted">Administrative Officer</p>

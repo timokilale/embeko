@@ -35,6 +35,14 @@
             <i class="fas fa-file-alt me-2"></i> Website Pages
         </a>
 
+        <a href="{{ route('admin.messages.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.messages.*') ? 'fw-bold text-decoration-underline' : '' }}">
+            <i class="fas fa-envelope me-2"></i> Messages
+        </a>
+
+         <a href="{{ route('admin.fees.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.messages.*') ? 'fw-bold text-decoration-underline' : '' }}">
+            <i class="fas fa-dollar-sign me-2"></i> Fees
+        </a>
+
         <a href="{{ route('admin.users.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.users.*') ? 'fw-bold text-decoration-underline' : '' }}">
             <i class="fas fa-users me-2"></i> Users
         </a>
