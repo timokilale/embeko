@@ -16,11 +16,11 @@ class HomeController extends Controller
     public function index()
     {
         // Remove try-catch to see actual errors
-        $latestPosts = Post::with('category')
-            ->published()
-            ->latest('published_at')
-            ->take(3)
-            ->get();
+        $news = Post::whereHas('category', function ($query) {
+            $query->where('slug', 'news');
+        })
+            ->latest()
+            ->first();
 
         $upcomingEvents = Event::upcoming()
             ->take(3)
@@ -31,7 +31,14 @@ class HomeController extends Controller
         // Get the active welcome message
         $welcomeMessage = WelcomeMessage::getActive();
 
-        return view('home', compact('latestPosts', 'upcomingEvents', 'schoolInfo', 'welcomeMessage'));
+        $announcement = Post::whereHas('category', function ($query) {
+            $query->where('slug', 'announcements');
+        })
+            ->latest()
+            ->first();
+
+
+        return view('home', compact('news', 'upcomingEvents', 'schoolInfo', 'welcomeMessage', 'announcement'));
     }
 
     /**

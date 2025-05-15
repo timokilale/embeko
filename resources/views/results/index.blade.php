@@ -5,7 +5,7 @@
 @section('content')
 <div class="container py-5">
     <h1 class="mb-4">Examination Results</h1>
-    
+
     <div class="row mb-5">
         <div class="col-md-8">
             <p class="lead">
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Results Search Form -->
     <!-- <div class="card border-0 shadow-sm mb-5">
         <div class="card-body">
@@ -59,7 +59,7 @@
             </form>
         </div>
     </div> -->
-    
+
     <!-- Recent Examination Results -->
     <h3 class="mb-4">Recent Examination Results</h3>
     <div class="row">
@@ -73,7 +73,7 @@
                         @for($year = date('Y'); $year >= date('Y')-3; $year--)
                             <a href="{{ route('results.show', ['exam' => 'csee', 'year' => $year]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 <span>
-                                    <i class="fas fa-graduation-cap me-2"></i> 
+                                    <i class="fas fa-graduation-cap me-2"></i>
                                     CSEE {{ $year }} Results
                                 </span>
                                 <span class="badge bg-primary rounded-pill">View</span>
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col-md-6 mb-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-header bg-success text-white">
@@ -99,7 +99,7 @@
                         @for($year = date('Y'); $year >= date('Y')-3; $year--)
                             <a href="{{ route('results.show', ['exam' => 'FTNA', 'year' => $year]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 <span>
-                                    <i class="fas fa-graduation-cap me-2"></i> 
+                                    <i class="fas fa-graduation-cap me-2"></i>
                                     FTNA {{ $year }} Results
                                 </span>
                                 <span class="badge bg-success rounded-pill">View</span>
@@ -115,7 +115,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Performance Highlights -->
     <div class="card border-0 shadow-sm mt-4">
         <div class="card-header bg-info text-white">
@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Results Archive -->
     <h3 class="mt-5 mb-4">Results Archive</h3>
     <div class="accordion" id="resultsArchive">
@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- FTNA Archive -->
         <div class="accordion-item border-0 shadow-sm mb-3">
             <h2 class="accordion-header" id="headingFTNA">
@@ -189,7 +189,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Other Exams Archive -->
         <div class="accordion-item border-0 shadow-sm">
             <h2 class="accordion-header" id="headingOther">

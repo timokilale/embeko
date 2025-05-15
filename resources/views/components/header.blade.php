@@ -1,34 +1,55 @@
 <!-- Desktop header -->
-<header id="header" class="text-black justify-content-center py-3 d-none d-md-block header-height">
-    <div class="container-fluid position-relative">
-        <div class="row align-items-center px-md-5 px-lg-5 py-2">
-            <div class="col-md-3 col-lg-2 text-center logo-div">
-                <img src="{{ asset('images/kkkt.png') }}" alt="ELCT Logo" class="img-fluid logo-img" />
+<header id="header" class="bg-white shadow-sm py-3 d-none d-md-block">
+    <div class="container-fluid px-4">
+        <div class="row align-items-center text-center">
+            <!-- Left Logo -->
+            <div class="col-md-2">
+                <img src="{{ asset('images/kkkt.png') }}" alt="ELCT Logo" class="img-fluid" style="max-height: 80px;">
             </div>
-            <div class="col-md-6 col-lg-8 text-center text-dark school-info-container border-0">
-                <div class="school-info-content">
-                    <h2 class="school-title mb-1 text-primary">ELCT-DODOMA DIOCESE</h2>
-                    <h2 class="school-title mb-1 text-dark">EMBEKO SECONDARY SCHOOL</h2>
-                    <p class="reg-number mb-0 text-dark">Reg No. S.4506</p>
-                    <p class="school-motto text-dark mb-0">"Education with Excellency"</p>
-                </div>
+
+            <!-- School Info -->
+            <div class="col-md-8">
+                <h2 class="mb-1 text-primary fw-bold" style="font-size: 1.75rem;">ELCT-DODOMA DIOCESE</h2>
+                <h2 class="mb-1 text-dark fw-bold" style="font-size: 1.75rem;">EMBEKO SECONDARY SCHOOL</h2>
+                <p class="text-muted mb-0">Reg No. S.4506</p>
+                <p class="text-secondary fst-italic mb-0">"Education with Excellency"</p>
             </div>
-            <div class="col-md-3 col-lg-2 text-center logo-div">
-                <img src="{{ asset('images/logo.png') }}" alt="School Logo" class="img-fluid logo-img" />
+
+            <!-- Right Logo -->
+            <div class="col-md-2">
+                <img src="{{ asset('images/logo.png') }}" alt="School Logo" class="img-fluid" style="max-height: 80px;">
             </div>
         </div>
     </div>
 </header>
 
 <!-- Mobile header -->
-<header id="mobile-header" class="d-md-none py-3 bg-light">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-center">
-            <img src="{{ asset('images/logo.png') }}" alt="School Logo" class="mobile-logo me-3" />
-            <div class="text-center">
-                <h1 class="mobile-school-title">EMBEKO SECONDARY SCHOOL</h1>
-                <p class="mobile-school-motto mb-0">Education with excellency</p>
+<header id="mobile-header" class="d-md-none py-3 bg-white shadow-sm">
+    <div class="container text-center">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="{{ asset('images/logo.png') }}" alt="School Logo" class="me-3" style="height: 60px;">
+            <div>
+                <h5 class="mb-1 text-primary fw-bold">EMBEKO SECONDARY SCHOOL</h5>
+                <p class="mb-0 text-muted fst-italic">"Education with Excellency"</p>
             </div>
         </div>
     </div>
 </header>
+
+
+<style>
+    #header,
+    #mobile-header {
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .school-info-content h2 {
+        letter-spacing: 0.5px;
+    }
+
+    .school-motto,
+    .mobile-school-motto {
+        font-size: 0.95rem;
+    }
+
+</style>

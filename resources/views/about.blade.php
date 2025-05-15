@@ -179,36 +179,18 @@
     <div class="mb-5">
         <h2 class="text-center mb-4">School Leadership</h2>
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center pt-6">
-                    <img src="{{ asset('images/principal.jpg') }}" class="card-img-top mt-3" alt="School Principal">
-                    <div class="card-body">
-                        <h4 class="card-title">Dr. John Doe</h4>
-                        <p class="text-muted">Principal</p>
-                        <p class="card-text">Dr. John Doe has over 20 years of experience in education and has been leading Embeko Secondary School since 2015.</p>
+            @foreach($leaders as  $leader)
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm text-center pt-6">
+                        <img src="{{$leader->images}}" class="card-img-top mt-3" alt="School Principal">
+                        <div class="card-body">
+                            <h4 class="card-title">{{$leader->name}}</h4>
+                            <p class="text-muted">{{$leader->title}}</p>
+                            <p class="card-text">{{$leader->description}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center pt-6">
-                    <img src="{{ asset('images/deputy-principal.jpg') }}" class="card-img-top mt-3" alt="Deputy Principal">
-                    <div class="card-body">
-                        <h4 class="card-title">Mrs. Jane Smith</h4>
-                        <p class="text-muted">Deputy Principal (Academics)</p>
-                        <p class="card-text">Mrs. Jane Smith oversees the academic programs and ensures that our students receive quality education.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center pt-6">
-                    <img src="{{ asset('images/admin-officer.jpg') }}" class="card-img-top mt-3" alt="Administrative Officer">
-                    <div class="card-body">
-                        <h4 class="card-title">Mr. David Johnson</h4>
-                        <p class="text-muted">Administrative Officer</p>
-                        <p class="card-text">Mr. David Johnson manages the day-to-day operations of the school and ensures smooth functioning of all departments.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 

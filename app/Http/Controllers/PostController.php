@@ -43,14 +43,8 @@ class PostController extends Controller
     /**
      * Display the specified post.
      */
-    public function show($slug)
+    public function show(Post $post)
     {
-        $post = Post::with('category')
-            ->where('slug', $slug)
-            ->published()
-            ->firstOrFail();
-
-        // Get categories with post count for sidebar
         $categories = Category::withCount('posts')->get();
 
         // Get recent posts for sidebar

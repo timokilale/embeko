@@ -15,10 +15,9 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        $posts = Post::where('category_id', $category->id)
-            ->published()
-            ->latest('published_at')
-            ->paginate(10);
+
+        $posts = Post::where('category_id', $category->id)->where('is_published', true)->paginate(10);
+//        dd($posts);
 
         // Get all categories with post count for sidebar
         $categories = Category::withCount('posts')->get();

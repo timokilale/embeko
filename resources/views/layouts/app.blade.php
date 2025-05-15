@@ -20,9 +20,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <!-- Minimalist Theme CSS (overrides) -->
-    <link rel="stylesheet" href="{{ asset('css/minimalist.css') }}">
-
     @stack('styles')
 </head>
 <body>

@@ -106,8 +106,8 @@
                 <div class="col-md-6 text-center text-md-start">
                     <p class="mb-0">&copy; {{ date('Y') }} Embeko Secondary School. All Rights Reserved.</p>
                     <div class="mt-2">
-                        <a href="{{ route('page.show', 'privacy-policy') }}" class="me-3 text-decoration-none">Privacy Policy</a>
-                        <a href="{{ route('page.show', 'terms-of-service') }}" class="text-decoration-none">Terms of Service</a>
+                        <a href="{{ route('privacy.policy') }}" class="me-3 text-decoration-none">Privacy Policy</a>
+                        <a href="{{ route('terms.service') }}" class="text-decoration-none">Terms of Service</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end">

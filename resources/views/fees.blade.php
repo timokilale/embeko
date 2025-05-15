@@ -7,19 +7,23 @@
         <!-- Fees Header -->
         <div class="row mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <h1 class="mb-3">Fees Structure</h1>
-                <p class="lead">
-                    Embeko Secondary School offers quality education at competitive and affordable fees.
-                </p>
-                <p>
-                    Our fee structure is designed to ensure that we provide the best educational experience for our students
-                    while remaining accessible to families from diverse economic backgrounds. The fees cover tuition,
-                    accommodation, meals, learning materials, and extracurricular activities.
-                </p>
-                <p>
-                    We offer various payment plans to accommodate different financial situations. Please contact our
-                    administrative office for more information about payment options.
-                </p>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="mb-3">Fees Structure</h1>
+                        <p class="lead">
+                            Embeko Secondary School offers quality education at competitive and affordable fees.
+                        </p>
+                        <p>
+                            Our fee structure is designed to ensure that we provide the best educational experience for our students
+                            while remaining accessible to families from diverse economic backgrounds. The fees cover tuition,
+                            accommodation, meals, learning materials, and extracurricular activities.
+                        </p>
+                        <p>
+                            We offer various payment plans to accommodate different financial situations. Please contact our
+                            administrative office for more information about payment options.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6">
                 <div class="card border-0 shadow-sm">

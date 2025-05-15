@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+
 class UserController extends Controller
 {
     public function index()
@@ -18,7 +20,8 @@ class UserController extends Controller
 
     public function create()
     {
-        return view("admin.users.create");
+        $roles = Role::all();
+        return view("admin.users.create", compact("roles"));
     }
 
 
@@ -28,6 +31,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'role' => 'required|exists:roles.id'
         ]);
 
         $user = User::create([
@@ -36,13 +40,16 @@ class UserController extends Controller
             'password' => bcrypt($validated['password']),
         ]);
 
+        $user->assignRole($validated['role']);
+
         return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
     }
 
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.users.edit', compact('user'));
+        $roles = Role::all();
+        return view('admin.users.edit', compact('user','roles'));
     }
 
     public function update(Request $request, $id)
@@ -53,6 +60,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:8|confirmed',
+            'role' => 'required'
         ]);
 
         $user->name = $validated['name'];
@@ -61,6 +69,8 @@ class UserController extends Controller
             $user->password = bcrypt($validated['password']);
         }
         $user->save();
+
+        $user->assignRole($validated['role']);
 
         return redirect()->route('admin.users.index')->with('success', 'User updated successfully.');
     }

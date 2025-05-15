@@ -19,6 +19,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');
+Route::view('/terms-of-service', 'terms-of-service')->name('terms.service');
 
+Route::get('gallery', [GalleryImageController::class,'index'])->name('gallery.index')->middleware('auth');
 // Newsletter Subscription
 Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
@@ -113,7 +119,18 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check.role'])->group
     //Messages routes
 
     Route::resource('messages', MessageController::class);
+    Route::get('/gallery/upload', [GalleryImageController::class, 'create'])->name('gallery.create');
+    Route::post('/gallery/upload', [GalleryImageController::class, 'store'])->name('gallery.store');
+    Route::get('/gallery/manage', [GalleryImageController::class, 'manage'])->name('gallery.manage');
+    Route::delete('/gallery/{image}', [GalleryImageController::class, 'destroy'])->name('gallery.destroy');
 });
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'sw', 'fr'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
 
 // Authentication Routes
 Route::get('/login', function () {

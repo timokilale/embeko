@@ -5,13 +5,13 @@
 @section('content')
 <div class="container py-5">
     <h1 class="mb-4">School Events</h1>
-    
+
     <!-- Upcoming Events -->
     <section class="mb-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="mb-0">Upcoming Events</h2>
         </div>
-        
+
         <div class="row">
             @forelse($upcomingEvents as $event)
                 <div class="col-md-4 mb-4">
@@ -29,7 +29,7 @@
                                 @endif
                             </div>
                             <h5 class="card-title">{{ $event->title }}</h5>
-                            <p class="card-text">{{ Str::limit($event->description, 100) }}</p>
+                            <p class="card-text">{!! Str::limit($event->description, 100)!!}</p>
                             <div class="mb-3">
                                 <i class="fas fa-map-marker-alt text-muted me-2"></i>
                                 <span>{{ $event->location ?: 'Location TBA' }}</span>
@@ -53,19 +53,19 @@
                 </div>
             @endforelse
         </div>
-        
+
         <!-- Pagination -->
         <div class="d-flex justify-content-center mt-4">
             {{ $upcomingEvents->appends(['past' => request()->past])->links() }}
         </div>
     </section>
-    
+
     <!-- Past Events -->
     <section>
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="mb-0">Past Events</h2>
         </div>
-        
+
         <div class="row">
             @forelse($pastEvents as $event)
                 <div class="col-md-4 mb-4">
@@ -107,7 +107,7 @@
                 </div>
             @endforelse
         </div>
-        
+
         <!-- Pagination -->
         <div class="d-flex justify-content-center mt-4">
             {{ $pastEvents->appends(['upcoming' => request()->upcoming])->links() }}

@@ -46,5 +46,8 @@
         <a href="{{ route('admin.users.index') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.users.*') ? 'fw-bold text-decoration-underline' : '' }}">
             <i class="fas fa-users me-2"></i> Users
         </a>
+        <a href="{{ route('admin.gallery.manage') }}" class="list-group-item list-group-item-action bg-white text-black border-bottom {{ request()->routeIs('admin.gallery.*') ? 'fw-bold text-decoration-underline' : '' }}">
+            <i class="fas fa-image me-2"></i> Gallery
+        </a>
     </div>
 </div>

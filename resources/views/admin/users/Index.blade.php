@@ -29,7 +29,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ ucfirst($user->role ?? 'User') }}</td>
+                                <td>{{ ucfirst($user->roles->first()->name ?? 'User') }}</td>
                                 <td>{{ $user->created_at->format('Y-m-d') }}</td>
                                 <td class="text-end">
                                     <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-warning">

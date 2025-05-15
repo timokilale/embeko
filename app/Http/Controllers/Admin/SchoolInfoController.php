@@ -23,7 +23,7 @@ class SchoolInfoController extends Controller
      */
     public function update(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'slogan' => 'nullable|string|max:255',
             'description' => 'nullable|string',
@@ -40,10 +40,12 @@ class SchoolInfoController extends Controller
             'instagram' => 'nullable|url|max:255',
             'youtube' => 'nullable|url|max:255',
             'linkedin' => 'nullable|url|max:255',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'logo' => 'nullable|image|mimes:png,png,jpg,jpeg|max:1024',
             'favicon' => 'nullable|image|mimes:ico,png,jpg,jpeg|max:1024',
             'banner' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
         ]);
+
+//        dd($validated['logo']);
 
         $schoolInfo = SchoolInfo::first();
         if (!$schoolInfo) {
@@ -51,18 +53,13 @@ class SchoolInfoController extends Controller
         }
 
         // Handle file uploads
-        if ($request->hasFile('logo')) {
-            // Delete old logo if exists
-            if ($schoolInfo->logo) {
-                Storage::disk('public')->delete($schoolInfo->logo);
-            }
-
+        if ($request->hasFile('logo') && $request->file('logo')->isValid()) {
             $logoPath = $request->file('logo')->store('school', 'public');
             $schoolInfo->logo = $logoPath;
         }
 
+
         if ($request->hasFile('favicon')) {
-            // Delete old favicon if exists
             if ($schoolInfo->favicon) {
                 Storage::disk('public')->delete($schoolInfo->favicon);
             }
@@ -72,7 +69,6 @@ class SchoolInfoController extends Controller
         }
 
         if ($request->hasFile('banner')) {
-            // Delete old banner if exists
             if ($schoolInfo->banner) {
                 Storage::disk('public')->delete($schoolInfo->banner);
             }

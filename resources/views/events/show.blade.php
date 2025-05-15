@@ -23,13 +23,13 @@
                     @else
                         <span class="badge bg-secondary me-2">Past</span>
                     @endif
-                    
+
                     @if($event->is_featured)
                         <span class="badge bg-warning me-2">Featured</span>
                     @endif
                 </div>
             </div>
-            
+
             <!-- Featured Image -->
             <div class="mb-4">
                 @if($event->featured_image)
@@ -38,7 +38,7 @@
                     <img src="{{ asset('images/event-placeholder.jpg') }}" class="img-fluid rounded" alt="{{ $event->title }}">
                 @endif
             </div>
-            
+
             <!-- Event Details -->
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
@@ -58,12 +58,12 @@
                             <p class="mb-0">{{ $event->location ?: 'Location TBA' }}</p>
                         </div>
                     </div>
-                    
+
                     <h5 class="mb-3">Event Description</h5>
                     <div class="event-description">
-                        {!! nl2br(e($event->description)) !!}
+                        {!!$event->description!!}
                     </div>
-                    
+
                     @if($event->start_date >= now())
                         <div class="mt-4">
                             <a href="#" class="btn btn-primary">
@@ -76,7 +76,7 @@
                     @endif
                 </div>
             </div>
-            
+
             <!-- Countdown Timer (for upcoming events) -->
             @if($event->start_date >= now())
                 <div class="card border-0 shadow-sm mb-4">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             @endif
-            
+
             <!-- Share Buttons -->
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Sidebar -->
         <div class="col-lg-4">
             <!-- Other Events -->
@@ -172,7 +172,7 @@
                     @endif
                 </div>
             </div>
-            
+
             <!-- Event Location Map -->
             @if($event->location)
                 <div class="card border-0 shadow-sm">
@@ -181,14 +181,14 @@
                     </div>
                     <div class="card-body">
                         <div class="map-container">
-                            <iframe 
-                                width="100%" 
-                                height="250" 
-                                frameborder="0" 
-                                style="border:0" 
-                                src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q={{ urlencode($event->location) }}" 
-                                allowfullscreen>
-                            </iframe>
+                            <iframe
+                                class="gmap_iframe"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=embeko secondary school&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                            ></iframe>
                         </div>
                         <p class="mt-2 mb-0">
                             <i class="fas fa-map-marker-alt text-primary me-2"></i> {{ $event->location }}
@@ -225,37 +225,36 @@
 @endpush
 
 @push('scripts')
-<script>
-    // Countdown Timer
-    document.addEventListener('DOMContentLoaded', function() {
-        const countdownEl = document.querySelector('.countdown');
-        if (countdownEl) {
-            const eventDate = new Date(countdownEl.dataset.date).getTime();
-            
-            const countdown = setInterval(function() {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const countdown = document.querySelector('.countdown');
+            if (!countdown) return;
+
+            const targetDate = new Date(countdown.dataset.date).getTime();
+
+            function updateCountdown() {
                 const now = new Date().getTime();
-                const distance = eventDate - now;
-                
-                if (distance < 0) {
-                    clearInterval(countdown);
-                    document.querySelector('.days').textContent = '00';
-                    document.querySelector('.hours').textContent = '00';
-                    document.querySelector('.minutes').textContent = '00';
-                    document.querySelector('.seconds').textContent = '00';
+                const distance = targetDate - now;
+
+                if (distance <= 0) {
+                    document.querySelector('.countdown').innerHTML = '<div class="col-12"><p class="text-danger">Event has started!</p></div>';
+                    clearInterval(interval);
                     return;
                 }
-                
+
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.querySelector('.days').textContent = days < 10 ? '0' + days : days;
-                document.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
-                document.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
-                document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
-            }, 1000);
-        }
-    });
-</script>
+
+                countdown.querySelector('.days').textContent = String(days).padStart(2, '0');
+                countdown.querySelector('.hours').textContent = String(hours).padStart(2, '0');
+                countdown.querySelector('.minutes').textContent = String(minutes).padStart(2, '0');
+                countdown.querySelector('.seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown(); // Initial run
+            const interval = setInterval(updateCountdown, 1000); // Update every second
+        });
+    </script>
 @endpush

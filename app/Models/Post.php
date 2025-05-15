@@ -56,4 +56,14 @@ class Post extends Model
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now());
     }
+
+    public function is_announcement()
+    {
+        return $this->category()->first()->name == 'Announcements';
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

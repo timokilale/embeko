@@ -77,7 +77,7 @@
                                 </td>
                                 <td>{{ $post->category->name ?? 'Uncategorized' }}</td>
                                 <td>
-                                    @if($post->status == 'published')
+                                    @if($post->is_published && $post->published_at != null)
                                         <span class="badge bg-success">Published</span>
                                     @else
                                         <span class="badge bg-secondary">Draft</span>

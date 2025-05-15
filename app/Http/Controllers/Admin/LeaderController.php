@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Models\Leader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class LeaderController extends Controller
 {
@@ -31,34 +33,30 @@ class LeaderController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'is_active' => 'boolean',
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'nullable|date|after_or_equal:start_date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'is_featured' => 'nullable',
         ]);
 
-        $data = $request->except('image');
-        $data['is_active'] = $request->has('is_active');
-
-        // Get the highest order value and add 1
-        $maxOrder = Leader::max('order') ?? 0;
-        $data['order'] = $maxOrder + 1;
-
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/uploads/leaders', $imageName);
-            $data['image'] = 'uploads/leaders/' . $imageName;
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $path = $request->file('image')->store('events', 'public');
+            $data['image'] = $path;
         }
 
-        Leader::create($data);
+        $data['is_featured'] = $request->has('is_featured');
 
-        return redirect()->route('admin.leaders.index')
-            ->with('success', 'Leader profile created successfully.');
+        $data['slug'] = Str::slug($data['title']);
+
+        Event::create($data);
+
+        return redirect()->route('admin.events.index')->with('success', 'Event created successfully!');
     }
+
 
     /**
      * Display the specified resource.

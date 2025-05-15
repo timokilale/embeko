@@ -179,35 +179,19 @@
     <div class="mb-5">
         <h2 class="text-center mb-4">School Leadership</h2>
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/principal.jpg') }}" class="card-img-top" alt="School Principal">
-                    <div class="card-body">
-                        <h4 class="card-title">Dr. John Doe</h4>
-                        <p class="text-muted">Head of School</p>
-                        <p class="card-text">Dr. John Doe has over 20 years of experience in education and has been leading Embeko Secondary School since 2015.</p>
+            <div class="row">
+                @foreach($leaders as  $leader)
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 shadow-sm text-center pt-6">
+                            <img src="{{$leader->image}}" class="card-img-top mt-3" alt="School Principal">
+                            <div class="card-body">
+                                <h4 class="card-title">{{$leader->name}}</h4>
+                                <p class="text-muted">{{$leader->title}}</p>
+                                <p class="card-text">{{$leader->description}}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/deputy-principal.jpg') }}" class="card-img-top" alt="Deputy Principal">
-                    <div class="card-body">
-                        <h4 class="card-title">Mrs. Jane Smith</h4>
-                        <p class="text-muted">Second Master</p>
-                        <p class="card-text">Mrs. Jane Smith oversees the academic programs and ensures that our students receive quality education.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm text-center">
-                    <img src="{{ asset('images/admin-officer.jpg') }}" class="card-img-top" alt="Administrative Officer">
-                    <div class="card-body">
-                        <h4 class="card-title">Mr. David Johnson</h4>
-                        <p class="text-muted">Academic Officer</p>
-                        <p class="card-text">Mr. David Johnson manages the day-to-day operations of the school and ensures smooth functioning of all departments.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -220,10 +204,10 @@
                 Discover the Embeko difference and give your child the education they deserve.
             </p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="{{ route('page.show', 'admissions') }}" class="btn btn-light btn-lg">
-                    <i class="fas fa-user-plus me-2"></i> Apply Now
+                <a href="{{ route('page.show', 'admissions') }}" class="btn btn-primary btn-lg btn-outline-light">
+                    <i class="fas fa-check-double me-2"></i> Apply Now
                 </a>
-                <a href="{{ route('page.show', 'contact-us') }}" class="btn btn-outline-light btn-lg">
+                <a href="{{ route('page.show', 'contact-us') }}" class="btn btn-dark btn-lg btn-outline-light">
                     <i class="fas fa-envelope me-2"></i> Contact Us
                 </a>
             </div>

@@ -54,29 +54,32 @@ class EventController extends Controller
         return view('admin.events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'location' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'is_featured' => 'boolean',
+            'is_featured' => 'nullable|string',
         ]);
 
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
-        $data['is_featured'] = $request->has('is_featured');
+        // Prepare data
+        $data = [
+            'title' => $validated['title'],
+            'slug' => Str::slug($validated['title']),
+            'description' => $validated['description'],
+            'location' => $validated['location'],
+            'start_date' => $validated['start_date'],
+            'end_date' => $validated['end_date'] ?? $validated['start_date'],
+            'is_featured' => isset($validated['is_featured']) && $validated['is_featured'] === 'on',
+        ];
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('events', 'public');
-            $data['image'] = $imagePath;
+            $data['featured_image'] = $request->file('image')->store('events', 'public');
         }
 
         Event::create($data);
@@ -106,38 +109,38 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Event $event)
     {
-        $event = Event::findOrFail($id);
-
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'location' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'is_featured' => 'boolean',
+            'is_featured' => 'nullable|string',
         ]);
 
-        $data = $request->all();
+        // Prepare update data
+        $data = [
+            'title' => $validated['title'],
+            'slug' => Str::slug($validated['title']),
+            'description' => $validated['description'],
+            'location' => $validated['location'],
+            'start_date' => $validated['start_date'],
+            'end_date' => $validated['end_date'] ?? $validated['start_date'],
+            'is_featured' => isset($validated['is_featured']) && $validated['is_featured'] === 'on',
+        ];
 
-        // Only update slug if title has changed
-        if ($event->title != $request->title) {
-            $data['slug'] = Str::slug($request->title);
-        }
-
-        $data['is_featured'] = $request->has('is_featured');
-
-        // Handle image upload
+        // If a new image is uploaded, replace the old one
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($event->image) {
-                Storage::disk('public')->delete($event->image);
+            if ($event->featured_image && Storage::disk('public')->exists($event->featured_image)) {
+                Storage::disk('public')->delete($event->featured_image);
             }
 
-            $imagePath = $request->file('image')->store('events', 'public');
-            $data['image'] = $imagePath;
+            // Store new image
+            $data['featured_image'] = $request->file('image')->store('events', 'public');
         }
 
         $event->update($data);

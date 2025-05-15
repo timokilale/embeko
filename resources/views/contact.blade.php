@@ -5,7 +5,7 @@
 @section('content')
 <div class="container py-5">
     <h1 class="mb-4">Contact Us</h1>
-    
+
     <div class="row mb-5">
         <div class="col-lg-6 mb-4 mb-lg-0">
             <div class="card border-0 shadow-sm h-100 contact-info-card">
@@ -14,7 +14,7 @@
                     <p class="lead mb-4">
                         We'd love to hear from you! Please feel free to contact us with any questions or inquiries.
                     </p>
-                    
+
                     <div class="d-flex mb-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
@@ -24,7 +24,7 @@
                             <p class="mb-0">{{ $schoolInfo->address ?? 'P.O. Box 1234, Dodoma, Tanzania' }}</p>
                         </div>
                     </div>
-                    
+
                     <div class="d-flex mb-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-phone fa-2x text-primary"></i>
@@ -34,7 +34,7 @@
                             <p class="mb-0">{{ $schoolInfo->phone ?? '+255 123 456 789' }}</p>
                         </div>
                     </div>
-                    
+
                     <div class="d-flex mb-4">
                         <div class="flex-shrink-0">
                             <i class="fas fa-envelope fa-2x text-primary"></i>
@@ -44,7 +44,7 @@
                             <p class="mb-0">{{ $schoolInfo->email ?? 'info@embeko.ac.tz' }}</p>
                         </div>
                     </div>
-                    
+
                     <div class="d-flex">
                         <div class="flex-shrink-0">
                             <i class="fas fa-clock fa-2x text-primary"></i>
@@ -54,7 +54,7 @@
                             <p class="mb-0">Monday - Friday: 8:00 AM - 4:00 PM<br>Saturday: 8:00 AM - 12:00 PM<br>Sunday: Closed</p>
                         </div>
                     </div>
-                    
+
                     <div class="mt-4">
                         <h5>Connect With Us</h5>
                         <div class="social-icons">
@@ -63,25 +63,25 @@
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             @endif
-                            
+
                             @if(isset($schoolInfo->twitter))
                                 <a href="{{ $schoolInfo->twitter }}" class="btn btn-outline-info me-2" target="_blank">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             @endif
-                            
+
                             @if(isset($schoolInfo->instagram))
                                 <a href="{{ $schoolInfo->instagram }}" class="btn btn-outline-danger me-2" target="_blank">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             @endif
-                            
+
                             @if(isset($schoolInfo->youtube))
                                 <a href="{{ $schoolInfo->youtube }}" class="btn btn-outline-danger me-2" target="_blank">
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             @endif
-                            
+
                             @if(isset($schoolInfo->linkedin))
                                 <a href="{{ $schoolInfo->linkedin }}" class="btn btn-outline-primary" target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
@@ -102,24 +102,24 @@
                         </div>
                     @endif
                     <h2 class="card-title mb-4">Send Us a Message</h2>
-                    
+
                     <form action="{{ route('admin.messages.store') }}" method="POST" class="contact-form">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" class="form-control" id="phone" name="phone">
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="subject" class="form-label">Subject</label>
                             <select class="form-select" id="subject" name="subject" required>
@@ -131,12 +131,12 @@
                                 <option value="Other">Other</option>
                             </select>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane me-2"></i> Send Message
                         </button>
@@ -145,20 +145,20 @@
             </div>
         </div>
     </div>
-    
-    <!-- Map Section -->
-    <div class="card border-0 shadow-sm mb-5">
-        <div class="card-body">
-            <h2 class="card-title mb-4">Our Location</h2>
-            @include('components.maps')
-        </div>
-    </div>
-    
+
+{{--    <!-- Map Section -->--}}
+{{--    <div class="card border-0 shadow-sm mb-5">--}}
+{{--        <div class="card-body">--}}
+{{--            <h2 class="card-title mb-4">Our Location</h2>--}}
+{{--            @include('components.maps')--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    --}}
     <!-- FAQ Section -->
     <div class="card border-0 shadow-sm">
         <div class="card-body">
             <h2 class="card-title mb-4">Frequently Asked Questions</h2>
-            
+
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -172,7 +172,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -185,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -198,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -211,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">

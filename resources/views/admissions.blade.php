@@ -9,8 +9,8 @@
     <!-- Admissions Overview -->
     <div class="row mb-5">
         <div class="col-lg-6 mb-4 mb-lg-0">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
+            <div class="card border-0 shadow-sm h-100 bg-primary text-white">
+                <div class="card-body justify-content-center">
                     <h2 class="card-title mb-4">Welcome to Embeko</h2>
                     <p class="lead">
                         Thank you for your interest in Embeko Secondary School. We are committed to providing a quality education that prepares students for success in their future endeavors.
@@ -21,11 +21,8 @@
                     <p>
                         We welcome applications from students who are eager to learn, willing to work hard, and ready to contribute positively to our school community.
                     </p>
-                    <div class="mt-4">
-                        <a href="/admissions" class="btn btn-primary">
-                            <i class="fas fa-user-plus me-2"></i> Apply Now
-                        </a>
-                        <a href="{{ route('downloads.index') }}" class="btn btn-outline-primary ms-2">
+                    <div class="mx-auto">
+                        <a href="{{ route('downloads.index') }}" class="btn btn-outline-primary btn-lg btn-outline-light text-white ms-2">
                             <i class="fas fa-download me-2"></i> Download Forms
                         </a>
                     </div>
