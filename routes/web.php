@@ -33,13 +33,18 @@ use App\Http\Controllers\GalleryImageController;
 */
 
 
+Route::get('/cookie-accept', function () {
+    return response('Cookie accepted')->cookie(
+        'cookie_consent', true, 60 * 24 * 365 // 1 year
+    );
+})->name('cookie.accept');
 
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');
 Route::view('/terms-of-service', 'terms-of-service')->name('terms.service');
 
-Route::get('gallery', [GalleryImageController::class,'index'])->name('gallery.index')->middleware('auth');
+Route::get('gallery', [GalleryImageController::class,'index'])->name('gallery.index');
 // Newsletter Subscription
 Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
@@ -62,11 +67,12 @@ Route::get('/downloads', [DownloadController::class, 'index'])->name('downloads.
 Route::get('/downloads/{download}', [DownloadController::class, 'download'])->name('downloads.download');
 
 // Exam Results Routes
+
 Route::get('/results', [ExamResultController::class, 'index'])->name('results.index');
 Route::get('/results/{exam}/{year}', [ExamResultController::class, 'show'])->name('results.show');
 Route::get('/results-summary', [ExamResultController::class, 'summary'])->name('results.summary');
-Route::get('/visualize-data/{exam}/{year}', [ExamResultController::class, 'visualize'])->name('results.visualize');
-Route::get('/overall-performance', [ExamResultController::class, 'overallPerformance'])->name('results.overall');
+Route::get('/results/overall-performance', [ExamResultController::class, 'overallPerformance'])->name('results.overall');
+Route::get('/results/visualize/{exam}/{year}', [ExamResultController::class, 'visualize'])->name('results.visualize');
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware(['auth','check.role'])->group(function () {
@@ -139,3 +145,4 @@ Route::get('/login', function () {
 
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+

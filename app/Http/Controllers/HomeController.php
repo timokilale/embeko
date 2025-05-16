@@ -20,7 +20,8 @@ class HomeController extends Controller
             $query->where('slug', 'news');
         })
             ->latest()
-            ->first();
+            ->take(2)
+        ->get();
 
         $upcomingEvents = Event::upcoming()
             ->take(3)
@@ -31,14 +32,15 @@ class HomeController extends Controller
         // Get the active welcome message
         $welcomeMessage = WelcomeMessage::getActive();
 
-        $announcement = Post::whereHas('category', function ($query) {
+        $announcements = Post::whereHas('category', function ($query) {
             $query->where('slug', 'announcements');
         })
             ->latest()
-            ->first();
+            ->take(3)
+            ->get();
 
 
-        return view('home', compact('news', 'upcomingEvents', 'schoolInfo', 'welcomeMessage', 'announcement'));
+        return view('home', compact('news', 'upcomingEvents', 'schoolInfo', 'welcomeMessage', 'announcements'));
     }
 
     /**

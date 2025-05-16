@@ -1,0 +1,266 @@
+[
+  {
+    "column1": "S4808/0001",
+    "prem": "20151385496",
+    "name": "DIANA MEDADI KANJE",
+    "column2": "F",
+    "column3": "33",
+    "column4": "IV",
+    "column5": "CIV-'F' HIST-'F' GEO-'F' B/KNOWL-'F' KISW-'D' ENGL-'D' PHY-'F' CHEM-'F' BIO-'F' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0002",
+    "prem": "20150371479",
+    "name": "DORCAS DANIEL MOLLEL",
+    "column2": "F",
+    "column3": "18",
+    "column4": "II",
+    "column5": "CIV-'C' HIST-'B' GEO-'C' B/KNOWL-'C' KISW-'C' ENGL-'B' PHY-'C' CHEM-'D' BIO-'B' B/MATH-'C'"
+  },
+  {
+    "column1": "S4808/0003",
+    "prem": "20150485411",
+    "name": "GRACE ANTONI MSUYA",
+    "column2": "F",
+    "column3": "27",
+    "column4": "IV",
+    "column5": "CIV-'F' HIST-'D' GEO-'D' B/KNOWL-'D' KISW-'C' ENGL-'D' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0004",
+    "prem": "20151068166",
+    "name": "LILIANI MSAFIRI KALINGA",
+    "column2": "F",
+    "column3": "20",
+    "column4": "II",
+    "column5": "CIV-'C' HIST-'C' GEO-'C' B/KNOWL-'D' KISW-'C' ENGL-'C' PHY-'D' CHEM-'D' BIO-'C' B/MATH-'B'"
+  },
+  {
+    "column1": "S4808/0005",
+    "prem": "20150451354",
+    "name": "LOSULA MENASI MUUNGWA",
+    "column2": "F",
+    "column3": "31",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'F' GEO-'F' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'F' CHEM-'F' BIO-'F' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0006",
+    "prem": "20150325030",
+    "name": "MARIAMU FEDRICK KITWANGE",
+    "column2": "F",
+    "column3": "16",
+    "column4": "I",
+    "column5": "CIV-'C' HIST-'C' GEO-'B' B/KNOWL-'D' KISW-'B' ENGL-'B' PHY-'C' CHEM-'C' BIO-'C' B/MATH-'A'"
+  },
+  {
+    "column1": "S4808/0007",
+    "prem": "20150279257",
+    "name": "MARY VENANCE NKACHA",
+    "column2": "F",
+    "column3": "28",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'D' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'F' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0008",
+    "prem": "20150305856",
+    "name": "NAJIMA ALOYCE YOHANA",
+    "column2": "F",
+    "column3": "28",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'D' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'F' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0009",
+    "prem": "20151041140",
+    "name": "NEEMA TENY MWIKOLA",
+    "column2": "F",
+    "column3": "28",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'F' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0010",
+    "prem": "20140227528",
+    "name": "RAHMA MASHAKA SALIMU",
+    "column2": "F",
+    "column3": "30",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'D' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'F' PHY-'F' CHEM-'F' BIO-'F' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0011",
+    "prem": "20150547469",
+    "name": "ROSEMARY GODLOVE PETER",
+    "column2": "F",
+    "column3": "26",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'D' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'D' CHEM-'D' BIO-'D' B/MATH-'C'"
+  },
+  {
+    "column1": "S4808/0012",
+    "prem": "20150605067",
+    "name": "VERONICA ALOYCE SASUKA",
+    "column2": "F",
+    "column3": "29",
+    "column4": "IV",
+    "column5": "CIV-'F' HIST-'D' GEO-'D' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'F' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0013",
+    "prem": "20171809315",
+    "name": "VICTORIA MARKO AKYOO",
+    "column2": "F",
+    "column3": "24",
+    "column4": "III",
+    "column5": "CIV-'C' HIST-'D' GEO-'D' B/KNOWL-'D' KISW-'C' ENGL-'B' PHY-'D' CHEM-'D' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0014",
+    "prem": "20150412292",
+    "name": "WINFRIDA DANIEL SHAMBA",
+    "column2": "F",
+    "column3": "15",
+    "column4": "I",
+    "column5": "CIV-'C' HIST-'C' GEO-'A' B/KNOWL-'C' KISW-'B' ENGL-'B' PHY-'D' CHEM-'D' BIO-'A' B/MATH-'C'"
+  },
+
+  {
+    "column1": "S4808/0016",
+    "prem": "20151486453",
+    "name": "ANDENGENYE HALELUYA MWAKIGALI",
+    "column2": "M",
+    "column3": "26",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'F' GEO-'C' B/KNOWL-'F' KISW-'C' ENGL-'C' PHY-'F' CHEM-'F' BIO-'C' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0017",
+    "prem": "20154277379",
+    "name": "BRAYAN DASTAN ADRIAN",
+    "column2": "M",
+    "column3": "27",
+    "column4": "IV",
+    "column5": "CIV-'F' HIST-'D' GEO-'C' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0018",
+    "prem": "20140237170",
+    "name": "DANIEL CHACHA CHAGUCHE",
+    "column2": "M",
+    "column3": "23",
+    "column4": "III",
+    "column5": "CIV-'C' HIST-'D' GEO-'C' B/KNOWL-'D' KISW-'B' ENGL-'D' PHY-'D' CHEM-'D' BIO-'C' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0019",
+    "prem": "20150416419",
+    "name": "DAVIDI JOSEPH LIBORI",
+    "column2": "M",
+    "column3": "31",
+    "column4": "IV",
+    "column5": "CIV-'F' HIST-'D' GEO-'F' B/KNOWL-'F' KISW-'D' ENGL-'D' PHY-'F' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0020",
+    "prem": "20151485498",
+    "name": "ERICK LAWRENTE JUMBE",
+    "column2": "M",
+    "column3": "18",
+    "column4": "II",
+    "column5": "CIV-'D' HIST-'C' GEO-'C' B/KNOWL-'C' KISW-'C' ENGL-'A' PHY-'C' CHEM-'D' BIO-'B' B/MATH-'D'"
+  },
+  {
+    "column1": "S4808/0021",
+    "prem": "20150616097",
+    "name": "FESTO JOHN MARUSU",
+    "column2": "M",
+    "column3": "16",
+    "column4": "I",
+    "column5": "CIV-'C' HIST-'B' GEO-'B' B/KNOWL-'D' KISW-'C' ENGL-'C' PHY-'B' CHEM-'C' BIO-'A' B/MATH-'C'"
+  },
+  {
+    "column1": "S4808/0022",
+    "prem": "20150366268",
+    "name": "GRYSON SIMONI SAKI",
+    "column2": "M",
+    "column3": "15",
+    "column4": "I",
+    "column5": "CIV-'C' HIST-'A' GEO-'B' B/KNOWL-'C' KISW-'C' ENGL-'C' PHY-'C' CHEM-'D' BIO-'B' B/MATH-'A'"
+  },
+
+  {
+    "column1": "S4808/0024",
+    "prem": "20150605485",
+    "name": "JIMMY EDWARD WILLIUM",
+    "column2": "M",
+    "column3": "22",
+    "column4": "III",
+    "column5": "CIV-'C' HIST-'C' GEO-'C' B/KNOWL-'C' KISW-'C' ENGL-'C' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'D'"
+  },
+  {
+    "column1": "S4808/0025",
+    "prem": "20151257144",
+    "name": "JUSTINE MICHAEL LUPEN",
+    "column2": "M",
+    "column3": "31",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'F' GEO-'F' B/KNOWL-'F' KISW-'C' ENGL-'D' PHY-'F' CHEM-'F' BIO-'F' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0026",
+    "prem": "20150547391",
+    "name": "LEMOSIAN MWANGEE MGEMA",
+    "column2": "M",
+    "column3": "27",
+    "column4": "IV",
+    "column5": "CIV-'D' HIST-'D' GEO-'C' B/KNOWL-'F' KISW-'D' ENGL-'D' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'F'"
+  },
+
+  {
+    "column1": "S4808/0028",
+    "prem": "20150484855",
+    "name": "OMARI JUMA SEIF",
+    "column2": "M",
+    "column3": "20",
+    "column4": "II",
+    "column5": "CIV-'C' HIST-'D' GEO-'C' B/KNOWL-'D' KISW-'C' ENGL-'C' PHY-'C' CHEM-'D' BIO-'C' B/MATH-'B'"
+  },
+  {
+    "column1": "S4808/0029",
+    "prem": "20153370428",
+    "name": "OSCAR AGUSTINO DAUDI",
+    "column2": "M",
+    "column3": "19",
+    "column4": "II",
+    "column5": "CIV-'C' HIST-'C' GEO-'C' B/KNOWL-'C' KISW-'B' ENGL-'B' PHY-'D' CHEM-'D' BIO-'C' B/MATH-'C'"
+  },
+  {
+    "column1": "S4808/0030",
+    "prem": "20154327726",
+    "name": "RASUL ADAMU HINTE",
+    "column2": "M",
+    "column3": "25",
+    "column4": "III",
+    "column5": "CIV-'D' HIST-'D' GEO-'C' B/KNOWL-'F' KISW-'C' ENGL-'C' PHY-'D' CHEM-'D' BIO-'D' B/MATH-'F'"
+  },
+  {
+    "column1": "S4808/0031",
+    "prem": "20150416467",
+    "name": "RICHARD CHAGU KAKENYELI",
+    "column2": "M",
+    "column3": "24",
+    "column4": "III",
+    "column5": "CIV-'D' HIST-'C' GEO-'C' B/KNOWL-'D' KISW-'C' ENGL-'D' PHY-'D' CHEM-'F' BIO-'D' B/MATH-'C'"
+  },
+  {
+    "column1": "S4808/0032",
+    "prem": "20150279468",
+    "name": "SIRIL MSURI SEVERIN",
+    "column2": "M",
+    "column3": "19",
+    "column4": "II",
+    "column5": "CIV-'C' HIST-'C' GEO-'C' B/KNOWL-'D' KISW-'A' ENGL-'C' PHY-'C' CHEM-'D' BIO-'C' B/MATH-'C'"
+  }
+]

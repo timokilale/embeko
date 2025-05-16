@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 
+
 class ExamResultController extends Controller
 {
     /**
@@ -60,18 +61,26 @@ class ExamResultController extends Controller
     /**
      * Display visualizations of exam results.
      */
+
+
     public function visualize($exam, $year)
     {
-        $examResult = ExamResult::where('exam_name', $exam)
-            ->where('year', $year)
-            ->first();
-
-        if (!$examResult) {
-            return redirect()->route('results.index')->with('error', 'Exam result not found.');
+        $fileName = "{$exam}_{$year}.json";
+        $filePath = "data/{$exam}/{$fileName}";
+        if (!Storage::disk('public')->exists($filePath)) {
+            abort(404, "Result file not found.");
         }
 
-        return view('results.visualize', compact('examResult', 'exam', 'year'));
+        $json = Storage::disk('public')->get($filePath);
+
+        $data = json_decode($json, true);
+        return view('results.visualize', [
+            'exam' => $exam,
+            'year' => $year,
+            'results' => $data,
+        ]);
     }
+
 
     /**
      * Display overall performance over the years.

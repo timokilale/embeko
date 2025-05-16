@@ -1,14 +1,16 @@
 <div class="card mt-3">
-    <div class="card-body p-0">
+    <div class="card-body">
         <div class="welcome-message">
             @if(isset($welcomeMessage))
                 <!-- Head of School image with text wrap -->
                 <div class="welcome-header">
+
                     @if($welcomeMessage->image)
                         <img src="{{ asset('storage/' . $welcomeMessage->image) }}" class="welcome-image" alt="{{ $welcomeMessage->title }}" />
+                        <h5 class="card-title mb-3 fw-bold">{{ $welcomeMessage->title }}</h5>
                     @endif
-                    <h5 class="card-title mb-3">{{ $welcomeMessage->title }}</h5>
-                    {!! $welcomeMessage->content !!}
+
+                    <p>{!! $welcomeMessage->content !!}</p>
                 </div>
 
                 @if($welcomeMessage->author_name)
@@ -44,33 +46,34 @@
         </div>
     </div>
 </div>
+@push('styles')
+    <style>
+        .welcome-message {
+            padding: 1.25rem;
+        }
 
-<style>
-.welcome-message {
-    padding: 1.25rem;
-}
+        .welcome-header {
+            position: relative;
+            margin-bottom: 1rem;
+        }
 
-.welcome-header {
-    position: relative;
-    margin-bottom: 1rem;
-}
+        .welcome-image {
+            float: left;
+            max-width: 200px;
+            margin-right: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-.welcome-image {
-    float: left;
-    max-width: 200px;
-    margin-right: 1.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 576px) {
-    .welcome-image {
-        float: none;
-        display: block;
-        margin: 0 auto 1rem;
-        max-width: 100%;
-        height: auto;
-    }
-}
-</style>
+        @media (max-width: 576px) {
+            .welcome-image {
+                float: none;
+                display: block;
+                margin: 0 auto 1rem;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+@endpush
