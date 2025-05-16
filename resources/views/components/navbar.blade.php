@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
-    <div class="container-fluid px-4">
+    <div class="container px-4">
         <!-- Mobile Logo -->
         <a class="navbar-brand d-lg-none" href="{{ route('home') }}">
             <img src="{{ asset('images/logo.png') }}" alt="Embeko Secondary School" height="40" class="d-inline-block">

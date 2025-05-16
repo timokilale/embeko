@@ -13,10 +13,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
@@ -45,15 +42,6 @@
     </style>
     @stack('styles')
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8VLWMNBYML"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-8VLWMNBYML');
-</script>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2L6WXL8"
@@ -136,9 +124,6 @@
 
     <!-- Confirmation Modal -->
     @include('components.confirmation-modal')
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script src="{{ asset('js/script.js') }}"></script>
