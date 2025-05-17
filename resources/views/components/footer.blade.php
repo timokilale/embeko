@@ -67,6 +67,7 @@
                                 <li><a href="{{ route('page.show', 'contact-us') }}"><i class="fas fa-angle-right me-2"></i>Contact Us</a></li>
                                 <li><a href="{{ route('results.overall') }}"><i class="fas fa-angle-right me-2"></i>School Performance</a></li>
                                 <li><a href="{{ route('login') }}"><i class="fas fa-lock me-2"></i>Admin Login</a></li>
+                                <li><a href="https://sims.test"><i class="fas fa-user-circle me-2"></i>SIMS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -111,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Developed & Maintained by <a href="https://github.com/timokilale" target="_blank" class="developer-link">Royal Tech Services</a></p>
+                    <p class="mb-0">Developed & Maintained by <a href="https://github.com/royaltechtz" target="_blank" class="developer-link">Royal Tech Services</a></p>
                 </div>
             </div>
         </div>

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fees', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->decimal('amount', 10, 2);
-            $table->timestamps();
+        Schema::table('category_fee_forms', function (Blueprint $table) {
+            $table->foreignId('year_id')->references('id')->on('year')->after('form_id')->cascadeOnDelete();
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fees');
+        Schema::table('category_fee_forms', function (Blueprint $table) {
+            //
+        });
     }
 };

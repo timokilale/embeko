@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ExamResultController;
+use App\Http\Controllers\FeeAssignmentController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
@@ -80,7 +81,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check.role'])->group
 
     // Posts Management
     Route::resource('posts', AdminPostController::class);
-
+    
     // Categories Management
     Route::resource('categories', AdminCategoryController::class);
 
@@ -99,6 +100,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check.role'])->group
     //Fee routes
 
     Route::resource('fees', FeeController::class);
+    Route::get('/fees-assignment/assign-fees',[FeeAssignmentController::class,'index'])->name('assign.fees');
+    Route::post('/fees-assignment/assign-fees',[FeeAssignmentController::class,'store'])->name('assign.store');
 
     // School Info Management
     Route::get('school-info', [AdminSchoolInfoController::class, 'edit'])->name('school-info.edit');

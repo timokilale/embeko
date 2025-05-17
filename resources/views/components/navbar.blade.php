@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm">
-    <div class="container px-4">
+    <div class="container-fluid">
         <!-- Mobile Logo -->
         <a class="navbar-brand d-lg-none" href="{{ route('home') }}">
             <img src="{{ asset('images/logo.png') }}" alt="Embeko Secondary School" height="40" class="d-inline-block">
@@ -13,7 +13,7 @@
 
         <!-- Navigation Links -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-            <ul class="navbar-nav gap-2">
+            <ul class="navbar-nav">
                 @php
                     $navItems = [
                         ['route' => 'home', 'icon' => 'home', 'label' => 'Home'],

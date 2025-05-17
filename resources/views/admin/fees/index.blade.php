@@ -8,10 +8,14 @@
             <h2 class="mb-0">Fee Registration</h2>
 
             <a href="{{ route('admin.fees.create') }}" class="btn btn-primary mb-3">
-            Add New Fee
-        </a>
+                Add New Fee
+            </a>
+
+            <a href="{{ route('admin.assign.fees') }}" class="btn btn-primary mb-3">
+                Assign Fees to Classes
+            </a>
         </div>
-        
+
 
         @if($fees->count())
             <div class="table-responsive">
@@ -21,7 +25,6 @@
                             <th>#</th>
                             <th>Fee Name</th>
                             <th>Amount</th>
-                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -31,7 +34,6 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $fee->name }}</td>
                                 <td>{{ number_format($fee->amount, 2) }}</td>
-                                <td>{{ $fee->description }}</td>
                                 <td>
                                     <a href="{{ route('admin.fees.edit', $fee->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                 </td>

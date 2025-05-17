@@ -23,9 +23,6 @@ class FeeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
-            'description' => 'required',
-            'category' => 'required',
-            'due_date' => 'date|nullable'
         ]);
 
         Fee::create($validated);
@@ -43,14 +40,18 @@ class FeeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
-            'description' => 'required',
-            'category' => 'required',
-            'due_date' => 'date|nullable'
         ]);
 
         $fee = Fee::findOrFail($id);
         $fee->update($validated);
 
         return redirect()->route('admin.fees.index')->with('success', 'Fee updated successfully.');
+    }
+
+
+
+    public function show()
+    {
+
     }
 }

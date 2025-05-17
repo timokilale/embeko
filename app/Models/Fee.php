@@ -16,4 +16,9 @@ class Fee extends Model
         'name',
         'due_date'
     ];
+
+    public function forms()
+    {
+        return $this->belongsToMany(Form::class);
+    }
 }

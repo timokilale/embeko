@@ -32,36 +32,6 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        @php
-                            $categories = ['tuition','direct','examination','others']
-                        @endphp
-
-                        <div class="mb-3">
-                            <label for="category_id" class="form-label">Category</label>
-                            <select name="category" id="category"
-                                    class="form-control @error('category') is-invalid @enderror" required>
-                                <option value="">-- Select Category --</option>
-                                @foreach($categories as $category)
-                                    <option value="{{ $category }}"
-                                        {{ old('category', $fee->category) == $category ? 'selected' : '' }}>
-                                        {{ $category }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            @error('category')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea name="description" id="description"
-                                      class="form-control @error('description') is-invalid @enderror"
-                                      rows="4">{{ old('description', $fee->description) }}</textarea>
-                            @error('description')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('admin.fees.index') }}" class="btn btn-secondary me-2">Cancel</a>
                             <button type="submit" class="btn btn-warning">
