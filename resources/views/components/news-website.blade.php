@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-md-12">
             @foreach($news as $new)
-                <div class="alert alert-primary text-primary" role="alert">
-                    {{$new->title}}
+                <div class="alert alert-primary" role="alert">
+                    <p class="fw-bold">{{$new->title}}</p>
                     <div class="pre-form-one">
-                        <p>{!! \Illuminate\Support\Str::limit($new->content,100) !!}</p>
+                        <p class="text-secondary-emphasis">{!! \Illuminate\Support\Str::limit($new->content,100) !!}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12 px-4">

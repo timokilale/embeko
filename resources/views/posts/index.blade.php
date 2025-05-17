@@ -8,7 +8,7 @@
         <!-- Main Content -->
         <div class="col-lg-8">
             <h1 class="mb-4">News & Blog</h1>
-            
+
             <!-- Search Form -->
             <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body">
@@ -20,7 +20,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <!-- Posts List -->
             <div class="row">
                 @forelse($posts as $post)
@@ -33,7 +33,7 @@
                             @endif
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span class="badge bg-primary">{{ $post->category->name }}</span>
+                                    <span class="badge bg-danger">{{ $post->category->name }}</span>
                                     <small class="text-muted">{{ $post->published_at->format('M d, Y') }}</small>
                                 </div>
                                 <h5 class="card-title">{{ $post->title }}</h5>
@@ -51,13 +51,13 @@
                     </div>
                 @endforelse
             </div>
-            
+
             <!-- Pagination -->
             <div class="d-flex justify-content-center mt-4">
                 {{ $posts->links() }}
             </div>
         </div>
-        
+
         <!-- Sidebar -->
         <div class="col-lg-4">
             <!-- Categories -->
@@ -78,7 +78,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Recent Posts -->
             <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-header bg-primary text-white">
@@ -108,7 +108,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Subscribe -->
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-primary text-white">
